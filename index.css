@@ -163,10 +163,22 @@ a:visited {
     position: relative;
     margin-top: 20px;
     width: 500px;
+    height: 300px;
     border: 2px solid black;
 }
 
+.box>a {
+    margin-top: 50px;
+    margin-left: 20px;
+}
 
+.box>h1 {
+    margin-left: 10px;
+}
+
+.box>h3 {
+    margin-left: 10px;
+}
 
 .avatar>img {
     position: absolute;

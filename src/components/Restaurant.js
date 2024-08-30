@@ -3,11 +3,13 @@ import Shimmer from "./shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 
-
+//for Restaurant Menu card
 const Restaurant = () => {
 
+    /* extraccting resId from a rescard to display its menu*/
     const { resId } = useParams();
 
+    //Restaurant Menu info
     const ResInfo = useRestaurantMenu(resId);
 
     if (ResInfo === null) {
@@ -21,8 +23,6 @@ const Restaurant = () => {
     const { title: title1 } = ResInfo?.cards[4].groupedCard.cardGroupMap.REGULAR.cards[2].card.card
 
     const { title: title2 } = ResInfo?.cards[4].groupedCard.cardGroupMap.REGULAR.cards[4].card.card
-
-
 
     return (
         <>
