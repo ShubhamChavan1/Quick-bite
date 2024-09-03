@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { swiggAPI } from "./constants"
 
+//custom hook for generating restuarants
 const useRescards = () => {
 
     const [filterRESTAUARANT, setfilterRESTAURANT] = useState([])

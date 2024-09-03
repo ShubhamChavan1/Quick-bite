@@ -2,17 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client'
 import Body from './components/Body';
 import Header from './components/Header';
-import About from './components/About';
 import Error from './components/Error';
 import ContactUS from './components/ContactUS';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import Restaurant from './components/Restaurant';
 import Shimmer from './components/shimmer';
-// import Grocery from './components/Grocery';
 
 
 const Grocery = lazy(() => import("./components/Grocery"));
+const About = lazy(() => import('./components/About'));
 
 const AppLayout = () => {
     return (
@@ -35,8 +34,9 @@ const AppRouter = createBrowserRouter([
             },
             {
                 path: "/about",
-                element: <About name={"Shubham Chavan"} location={"Mumbai"} Role={"SDE 1"} />
-
+                element: <Suspense fallback={<Shimmer />}>
+                    <About name={"Shubham Chavan"} location={"Mumbai"} Role={"SDE 1"} />
+                </Suspense>
             },
             {
                 path: "/contactus",
@@ -49,7 +49,7 @@ const AppRouter = createBrowserRouter([
 
             {
                 path: "/grocery",
-                element: <Suspense fallback={<Shimmer/> }>
+                element: <Suspense fallback={<Shimmer />}>
                     <Grocery />
                 </Suspense>
             }
