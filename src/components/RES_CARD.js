@@ -35,7 +35,7 @@ export const withDiscountTag = (RES_CARD) => {
         const { res_data } = props
         const { header } = res_data?.info.aggregatedDiscountInfoV3
         const { avgRating } = res_data.info
-
+        console.log(header)
         return (
             <>
                 <RES_CARD {...props}>

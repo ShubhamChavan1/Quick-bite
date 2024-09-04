@@ -3,9 +3,12 @@ import Shimmer from "./shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategories from "./RestuarantCategories";
+import { useState } from "react";
 
 //for Restaurant Menu card
 const Restaurant = () => {
+
+    const [showIndex, setshowIndex] = useState(null)
 
     /* extracating resId from a rescard to display its menu*/
     const { resId } = useParams();
@@ -30,7 +33,7 @@ const Restaurant = () => {
 
     return (
         <>
-            <div className="flex items-center flex-col justify-center font-medium text-lg">
+            <div className="flex items-center flex-col justify-start font-medium text-lg">
                 <h1>{text}</h1>
             </div>
             <div className="flex mt-3 justify-center">
@@ -43,10 +46,13 @@ const Restaurant = () => {
                     </div>
                 </div>
             </div>
-            {Categories.map((eachCategory) => {
-                return <RestaurantCategories key={eachCategory?.card.card.title}
-                    data={eachCategory?.card?.card} />
-            })}
+            {Categories.map((eachCategory, index) => (
+                <RestaurantCategories key={eachCategory?.card.card.title}
+                    data={eachCategory?.card?.card}
+                    showItemList={index === showIndex ? true : false}
+                    setshowIndex={() => setshowIndex(previndex => previndex === index ? null : index)}
+                />
+            ))}
 
 
         </>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client'
 import Body from './components/Body';
 import Header from './components/Header';
@@ -59,4 +59,7 @@ const AppRouter = createBrowserRouter([
 ])
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={AppRouter} />)
+root.render(<StrictMode>
+    <RouterProvider router={AppRouter} />
+</StrictMode>
+)
