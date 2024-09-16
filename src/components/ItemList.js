@@ -16,7 +16,7 @@ const ItemList = ({ itemsCards }) => {
                     </div>
                     <div className="w-3/12  p-4 relative">
 
-                        <img className="w-full" src={CDN_URL + item.card.info.imageId} alt="food-image" />
+                        <img className="w-[156px] h-[144px]" src={CDN_URL + item.card.info.imageId} alt="food-image" />
 
                         <button className=" absolute bottom-2 right-2 bg-black text-white p-2">ADD+</button>
                     </div>

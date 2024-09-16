@@ -1,5 +1,6 @@
 import React from "react"
 import Shimmer from "./shimmer";
+import userContext from "../utils/userContext";
 class AboutClass extends React.Component {
 
     constructor(props) {
@@ -7,8 +8,6 @@ class AboutClass extends React.Component {
         this.state = {
             userInfo: null
         }
-
-
     }
 
     //commit phase in mounting
@@ -38,6 +37,12 @@ class AboutClass extends React.Component {
             <div className="box">
                 <h1>About me</h1>
                 <h3>Username:  {this.state.userInfo.name}</h3>
+                {
+                    <userContext.Consumer>
+                    {({loggedInUser}) => <h1>LoggedInUser: {loggedInUser}</h1>}
+                    </userContext.Consumer>
+                }
+            
                 <h3>bio: {this.state.userInfo.bio}</h3>
                 <a href="https://github.com/ShubhamChavan1">My GitHub Profile</a>
                 <div className="avatar">

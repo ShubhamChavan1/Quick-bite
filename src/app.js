@@ -1,4 +1,4 @@
-import React, { StrictMode } from 'react';
+import React, { StrictMode, useState } from 'react';
 import ReactDOM from 'react-dom/client'
 import Body from './components/Body';
 import Header from './components/Header';
@@ -8,17 +8,33 @@ import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import Restaurant from './components/Restaurant';
 import Shimmer from './components/shimmer';
-
+import userContext from './utils/userContext';
+import DarkContext from './utils/DarkContext';
 
 const Grocery = lazy(() => import("./components/Grocery"));
 const About = lazy(() => import('./components/About'));
 
 const AppLayout = () => {
+
+    const [Theme, setTheme] = useState('white')
+
+    const toggleTheme = () => {
+        setTheme((prevtheme) => prevtheme === 'white' ? '#1d2a35' : 'white')
+    }
+
+
     return (
+
         <div id="app">
-            <Header />
-            <Outlet />
+            <DarkContext.Provider value={{ Theme, toggleTheme }}>
+                <Header />
+                <Outlet />
+            </DarkContext.Provider>
+
+
         </div>
+
+
     );
 }
 

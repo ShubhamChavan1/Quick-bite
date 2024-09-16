@@ -21,14 +21,13 @@ const Restaurant = () => {
     }
 
     const { avgRating, totalRatingsString, costForTwoMessage, cuisines } = ResInfo?.cards[2].card.card.info
-    // console.log(ResInfo)
+    console.log(ResInfo)
     const { text } = ResInfo?.cards?.[0]?.card?.card
 
-    const Categories = ResInfo.cards?.[4].groupedCard.cardGroupMap.REGULAR.cards.filter(
-        (Card) => {
-            return Card.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
-        }
-    )
+
+    const Categories = ResInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c) => c.card?.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
+    console.log(Categories)
 
 
     return (
@@ -46,13 +45,14 @@ const Restaurant = () => {
                     </div>
                 </div>
             </div>
-            {Categories.map((eachCategory, index) => (
-                <RestaurantCategories key={eachCategory?.card.card.title}
-                    data={eachCategory?.card?.card}
-                    showItemList={index === showIndex ? true : false}
-                    setshowIndex={() => setshowIndex(previndex => previndex === index ? null : index)}
-                />
-            ))}
+            {
+                Categories.map((eachCategory, index) => (
+                    <RestaurantCategories key={eachCategory?.card.card.title}
+                        data={eachCategory?.card?.card}
+                        showItemList={index === showIndex ? true : false}
+                        setshowIndex={() => setshowIndex(previndex => previndex === index ? null : index)}
+                    />
+                ))}
 
 
         </>
