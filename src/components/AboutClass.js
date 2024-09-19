@@ -1,5 +1,5 @@
 import React from "react"
-import Shimmer from "./shimmer";
+import Shimmer from "./Shimmer";
 import userContext from "../utils/userContext";
 class AboutClass extends React.Component {
 
