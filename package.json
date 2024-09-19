@@ -4,7 +4,7 @@
   "description": "this for practice react  js",
   "scripts": {
     "test": "jest",
-    "start": "parcel index.html",
+    "start": "parcel build src/index.html --no-hmr",
     "build": "parcel build index.html"
   },
   "author": "shubham chavan",
