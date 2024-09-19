@@ -14,8 +14,10 @@ const Cart = () => {
                 {CartItems.length === 0 && <h1>Looks like your Cart is Empty</h1>}
             </div>
 
+            <div className="w-6/12 m-auto">
+                <ItemList itemsCards={CartItems} />
+            </div>
 
-            <ItemList itemsCards={CartItems} />
         </>
     );
 }
