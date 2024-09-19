@@ -1,5 +1,5 @@
 import RES_CARD, { withDiscountTag } from './RES_CARD';
-import Shimmer from './shimmer';
+import Shimmer from './Shimmer';
 import { Link } from "react-router-dom";
 import useOnlineStatus from '../utils/useOnlineStatus';
 import useRescards from '../utils/useRescards';

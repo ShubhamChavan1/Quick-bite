@@ -7,12 +7,12 @@ import ContactUS from './components/ContactUS';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import Restaurant from './components/Restaurant';
-import Shimmer from './components/shimmer';
 import userContext from './utils/userContext';
 import DarkContextProvider from './utils/DarkContextProvider';
 import { Provider } from 'react-redux';
 import appStore from './utils/appStore';
 import Cart from './components/Cart';
+import Shimmer from './components/Shimmer';
 
 const Grocery = lazy(() => import("./components/Grocery"));
 const About = lazy(() => import('./components/About'));
