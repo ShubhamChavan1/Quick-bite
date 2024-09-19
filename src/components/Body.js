@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from '../utils/useOnlineStatus';
 import useRescards from '../utils/useRescards';
 import { useContext } from 'react';
-import DarkContext from '../utils/DarkContext';
+import { DarkContext } from '../utils/DarkContextProvider';
 
 
 
@@ -29,8 +29,10 @@ const Body = () => {
     const { Theme } = useContext(DarkContext);
 
     return listofRESTAUARANT.length === 0 ? <Shimmer /> : (
-        <div className="body" style={{ backgroundColor: Theme, 
-        color : Theme === 'white' ? 'black' : 'white'}}>
+        <div className="body" style={{
+            backgroundColor: Theme,
+            color: Theme === 'white' ? 'black' : 'white'
+        }}>
             <div className="flex  items-center justify-between">
                 <div className='flex items-center'>
                     <input className='m-5 outline-orange-400 border border-soild border-black' type="text" value={search} onChange={handleOnChange} />

@@ -21,13 +21,13 @@ const Restaurant = () => {
     }
 
     const { avgRating, totalRatingsString, costForTwoMessage, cuisines } = ResInfo?.cards[2].card.card.info
-    console.log(ResInfo)
+    // console.log(ResInfo)
     const { text } = ResInfo?.cards?.[0]?.card?.card
 
 
     const Categories = ResInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c) => c.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
-    console.log(Categories)
+    // console.log(Categories)
 
 
     return (

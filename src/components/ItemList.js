@@ -1,5 +1,15 @@
+import { useDispatch } from "react-redux";
 import { CDN_URL } from "../utils/constants";
+import { addItem } from "../utils/CartSlice";
+
 const ItemList = ({ itemsCards }) => {
+
+    const dispatch = useDispatch()
+
+    //dispatching an action to call reducer of cart
+    const handleAddItem = (item) => {
+        dispatch(addItem(item))
+    }
 
     return (
 
@@ -15,10 +25,9 @@ const ItemList = ({ itemsCards }) => {
                         <p className="mt-3 p-5 text-gray-500 font-mono">{item.card.info.description}</p>
                     </div>
                     <div className="w-3/12  p-4 relative">
-
-                        <img className="w-[156px] h-[144px]" src={CDN_URL + item.card.info.imageId} alt="food-image" />
-
-                        <button className=" absolute bottom-2 right-2 bg-black text-white p-2">ADD+</button>
+                        <img className="w-[200px] h-[144px]" src={CDN_URL + item.card.info.imageId} alt="food-image" />
+                        <button className=" absolute bottom-1 left-1/2 transform -translate-x-1/2  bg-black text-white p-2"
+                            onClick={() => handleAddItem(item)} >ADD+</button>
                     </div>
 
                 </div>
