@@ -35147,7 +35147,7 @@ const useRescards = ()=>{
         fetchData();
     }, []);
     const fetchData = async ()=>{
-        const data = await fetch("http://localhost:4000/api/restaurants?lat=19.0760&lng=72.8777");
+        const data = await fetch("https://menuproxyserver.onrender.com/api/restaurants?lat=19.0760&lng=72.8777");
         const json = await data.json();
         const Restaurants = json?.data?.cards[1]?.card.card?.gridElements?.infoWithStyle?.restaurants;
         setlistofRESTAUARANT(Restaurants);
@@ -36794,7 +36794,7 @@ const useRestaurantMenu = (resId)=>{
         fetchData(resId);
     }, []);
     const fetchData = async (resId)=>{
-        const data = await fetch(`http://localhost:4000/api/menu?restaurantId=${resId}`);
+        const data = await fetch(`https://menuproxyserver.onrender.com/api/menu?restaurantId=${resId}`);
         const json = await data.json();
         setResInfo(json.data);
     };

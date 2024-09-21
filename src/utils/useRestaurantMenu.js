@@ -11,7 +11,7 @@ const useRestaurantMenu = (resId) => {
     }, [])
 
     const fetchData = async (resId) => {
-        const data = await fetch(`http://localhost:4000/api/menu?restaurantId=${resId}`)
+        const data = await fetch(`https://menuproxyserver.onrender.com/api/menu?restaurantId=${resId}`)
 
         const json = await data.json();
 

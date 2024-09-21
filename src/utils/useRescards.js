@@ -13,7 +13,7 @@ const useRescards = () => {
 
 
     const fetchData = async () => {
-        const data = await fetch("http://localhost:4000/api/restaurants?lat=19.0760&lng=72.8777");
+        const data = await fetch("https://menuproxyserver.onrender.com/api/restaurants?lat=19.0760&lng=72.8777");
 
         const json = await data.json()
 
