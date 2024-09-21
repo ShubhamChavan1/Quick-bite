@@ -8,7 +8,7 @@ const Cart = () => {
     return (
         <>
             <div className="text-center font-bold text-xl mt-4">
-                Cart ho
+                Cart
             </div>
             <div className="text-center font-bold text-xl mt-4">
                 {CartItems.length === 0 && <h1>Looks like your Cart is Empty</h1>}

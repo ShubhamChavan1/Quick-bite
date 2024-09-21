@@ -518,12 +518,12 @@ img, video {
   border-width: 1px;
 }
 
-.border-\[20px\] {
-  border-width: 20px;
-}
-
 .border-2 {
   border-width: 2px;
+}
+
+.border-\[20px\] {
+  border-width: 20px;
 }
 
 .border-b-2 {

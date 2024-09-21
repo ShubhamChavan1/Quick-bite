@@ -2968,8 +2968,6 @@ var _contactUSDefault = parcelHelpers.interopDefault(_contactUS);
 var _reactRouterDom = require("react-router-dom");
 var _restaurant = require("./components/Restaurant");
 var _restaurantDefault = parcelHelpers.interopDefault(_restaurant);
-var _shimmer = require("./components/shimmer");
-var _shimmerDefault = parcelHelpers.interopDefault(_shimmer);
 var _userContext = require("./utils/userContext");
 var _userContextDefault = parcelHelpers.interopDefault(_userContext);
 var _darkContextProvider = require("./utils/DarkContextProvider");
@@ -2979,6 +2977,8 @@ var _appStore = require("./utils/appStore");
 var _appStoreDefault = parcelHelpers.interopDefault(_appStore);
 var _cart = require("./components/Cart");
 var _cartDefault = parcelHelpers.interopDefault(_cart);
+var _shimmer = require("./components/Shimmer");
+var _shimmerDefault = parcelHelpers.interopDefault(_shimmer);
 const Grocery = /*#__PURE__*/ (0, _react.lazy)(()=>require("b9adce3e16aaa7b2"));
 _c = Grocery;
 const About = /*#__PURE__*/ (0, _react.lazy)(()=>require("fda898b62b95e223"));
@@ -3142,7 +3142,7 @@ $RefreshReg$(_c2, "AppLayout");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./components/Body":"8yaV8","./components/Header":"hsJbF","./components/Error":"kvula","./components/ContactUS":"gqvXZ","react-router-dom":"9xmpe","./components/Restaurant":"kZInI","./components/shimmer":"fWXGy","./utils/userContext":"eBA1b","./utils/DarkContextProvider":"9W1uk","react-redux":"62sf7","./utils/appStore":"6A5Ux","./components/Cart":"h8J3U","b9adce3e16aaa7b2":"93fvj","fda898b62b95e223":"kxbq9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./components/Body":"8yaV8","./components/Header":"hsJbF","./components/Error":"kvula","./components/ContactUS":"gqvXZ","react-router-dom":"9xmpe","./components/Restaurant":"kZInI","./utils/userContext":"eBA1b","./utils/DarkContextProvider":"9W1uk","react-redux":"62sf7","./utils/appStore":"6A5Ux","./components/Cart":"h8J3U","./components/Shimmer":"g6ZGj","b9adce3e16aaa7b2":"93fvj","fda898b62b95e223":"kxbq9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27397,7 +27397,7 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _resCard = require("./RES_CARD");
 var _resCardDefault = parcelHelpers.interopDefault(_resCard);
-var _shimmer = require("./shimmer");
+var _shimmer = require("./Shimmer");
 var _shimmerDefault = parcelHelpers.interopDefault(_shimmer);
 var _reactRouterDom = require("react-router-dom");
 var _useOnlineStatus = require("../utils/useOnlineStatus");
@@ -27536,7 +27536,7 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./RES_CARD":"j9Fui","./shimmer":"fWXGy","react-router-dom":"9xmpe","../utils/useOnlineStatus":"181Ji","../utils/useRescards":"2vAKH","react":"21dqq","../utils/DarkContextProvider":"9W1uk","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"j9Fui":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./RES_CARD":"j9Fui","./Shimmer":"g6ZGj","react-router-dom":"9xmpe","../utils/useOnlineStatus":"181Ji","../utils/useRescards":"2vAKH","react":"21dqq","../utils/DarkContextProvider":"9W1uk","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"j9Fui":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$97ce = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27674,11 +27674,9 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "LOGO_URL", ()=>LOGO_URL);
 parcelHelpers.export(exports, "CDN_URL", ()=>CDN_URL);
-parcelHelpers.export(exports, "swiggAPI", ()=>swiggAPI);
 parcelHelpers.export(exports, "SwiggyMenu", ()=>SwiggyMenu);
 const LOGO_URL = "https://marketplace.canva.com/EAFpeiTrl4c/1/0/1600w/canva-abstract-chef-cooking-restaurant-free-logo-9Gfim1S8fHg.jpg";
 const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/";
-const swiggAPI = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.07480&lng=72.88560&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 const SwiggyMenu = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.07480&lng=72.88560&restaurantId=";
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
@@ -27849,11 +27847,11 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"7422ead32dcc1e6b":"786KC"}],"fWXGy":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$79c2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"7422ead32dcc1e6b":"786KC"}],"g6ZGj":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$0b04 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$79c2.prelude(module);
+$parcel$ReactRefreshHelpers$0b04.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -27866,97 +27864,97 @@ const Shimmer = ()=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "shimmer-res-card"
             }, void 0, false, {
-                fileName: "src/components/shimmer.js",
+                fileName: "src/components/Shimmer.js",
                 lineNumber: 3,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "shimmer-res-card"
             }, void 0, false, {
-                fileName: "src/components/shimmer.js",
+                fileName: "src/components/Shimmer.js",
                 lineNumber: 4,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "shimmer-res-card"
             }, void 0, false, {
-                fileName: "src/components/shimmer.js",
+                fileName: "src/components/Shimmer.js",
                 lineNumber: 5,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "shimmer-res-card"
             }, void 0, false, {
-                fileName: "src/components/shimmer.js",
+                fileName: "src/components/Shimmer.js",
                 lineNumber: 6,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "shimmer-res-card"
             }, void 0, false, {
-                fileName: "src/components/shimmer.js",
+                fileName: "src/components/Shimmer.js",
                 lineNumber: 7,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "shimmer-res-card"
             }, void 0, false, {
-                fileName: "src/components/shimmer.js",
+                fileName: "src/components/Shimmer.js",
                 lineNumber: 8,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "shimmer-res-card"
             }, void 0, false, {
-                fileName: "src/components/shimmer.js",
+                fileName: "src/components/Shimmer.js",
                 lineNumber: 9,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "shimmer-res-card"
             }, void 0, false, {
-                fileName: "src/components/shimmer.js",
+                fileName: "src/components/Shimmer.js",
                 lineNumber: 10,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "shimmer-res-card"
             }, void 0, false, {
-                fileName: "src/components/shimmer.js",
+                fileName: "src/components/Shimmer.js",
                 lineNumber: 11,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "shimmer-res-card"
             }, void 0, false, {
-                fileName: "src/components/shimmer.js",
+                fileName: "src/components/Shimmer.js",
                 lineNumber: 12,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "shimmer-res-card"
             }, void 0, false, {
-                fileName: "src/components/shimmer.js",
+                fileName: "src/components/Shimmer.js",
                 lineNumber: 13,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "shimmer-res-card"
             }, void 0, false, {
-                fileName: "src/components/shimmer.js",
+                fileName: "src/components/Shimmer.js",
                 lineNumber: 14,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "shimmer-res-card"
             }, void 0, false, {
-                fileName: "src/components/shimmer.js",
+                fileName: "src/components/Shimmer.js",
                 lineNumber: 15,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
-        fileName: "src/components/shimmer.js",
+        fileName: "src/components/Shimmer.js",
         lineNumber: 2,
         columnNumber: 12
     }, undefined);
@@ -27966,7 +27964,7 @@ exports.default = Shimmer;
 var _c;
 $RefreshReg$(_c, "Shimmer");
 
-  $parcel$ReactRefreshHelpers$79c2.postlude(module);
+  $parcel$ReactRefreshHelpers$0b04.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
@@ -35139,7 +35137,6 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
-var _constants = require("./constants");
 var _s = $RefreshSig$();
 //custom hook for generating restuarants
 const useRescards = ()=>{
@@ -35150,7 +35147,7 @@ const useRescards = ()=>{
         fetchData();
     }, []);
     const fetchData = async ()=>{
-        const data = await fetch((0, _constants.swiggAPI));
+        const data = await fetch("http://localhost:4000/api/restaurants?lat=19.0760&lng=72.8777");
         const json = await data.json();
         const Restaurants = json?.data?.cards[1]?.card.card?.gridElements?.infoWithStyle?.restaurants;
         setlistofRESTAUARANT(Restaurants);
@@ -35191,7 +35188,7 @@ exports.default = useRescards;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","./constants":"hB8jg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9W1uk":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9W1uk":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$c326 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -36646,7 +36643,7 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _shimmer = require("./shimmer");
+var _shimmer = require("./Shimmer");
 var _shimmerDefault = parcelHelpers.interopDefault(_shimmer);
 var _reactRouterDom = require("react-router-dom");
 var _useRestaurantMenu = require("../utils/useRestaurantMenu");
@@ -36654,17 +36651,19 @@ var _useRestaurantMenuDefault = parcelHelpers.interopDefault(_useRestaurantMenu)
 var _restuarantCategories = require("./RestuarantCategories");
 var _restuarantCategoriesDefault = parcelHelpers.interopDefault(_restuarantCategories);
 var _react = require("react");
+var _darkContextProvider = require("../utils/DarkContextProvider");
 var _s = $RefreshSig$();
 //for Restaurant Menu card
 const Restaurant = ()=>{
     _s();
+    const { Theme } = (0, _react.useContext)((0, _darkContextProvider.DarkContext));
     const [showIndex, setshowIndex] = (0, _react.useState)(null);
     /* extracating resId from a rescard to display its menu*/ const { resId } = (0, _reactRouterDom.useParams)();
     //Restaurant Menu info
     const ResInfo = (0, _useRestaurantMenuDefault.default)(resId);
     if (ResInfo === null) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
         fileName: "src/components/Restaurant.js",
-        lineNumber: 20,
+        lineNumber: 24,
         columnNumber: 16
     }, undefined);
     const { avgRating, totalRatingsString, costForTwoMessage, cuisines } = ResInfo?.cards[2].card.card.info;
@@ -36672,7 +36671,7 @@ const Restaurant = ()=>{
     const { text } = ResInfo?.cards?.[0]?.card?.card;
     const Categories = ResInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c)=>c.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
     // console.log(Categories)
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "flex items-center flex-col justify-start font-medium text-lg",
@@ -36680,12 +36679,12 @@ const Restaurant = ()=>{
                     children: text
                 }, void 0, false, {
                     fileName: "src/components/Restaurant.js",
-                    lineNumber: 36,
+                    lineNumber: 40,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Restaurant.js",
-                lineNumber: 35,
+                lineNumber: 39,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36705,42 +36704,42 @@ const Restaurant = ()=>{
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/Restaurant.js",
-                                lineNumber: 41,
+                                lineNumber: 45,
                                 columnNumber: 25
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
                                 children: cuisines.join(" , ")
                             }, void 0, false, {
                                 fileName: "src/components/Restaurant.js",
-                                lineNumber: 42,
+                                lineNumber: 46,
                                 columnNumber: 25
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                                 children: costForTwoMessage
                             }, void 0, false, {
                                 fileName: "src/components/Restaurant.js",
-                                lineNumber: 43,
+                                lineNumber: 47,
                                 columnNumber: 25
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {}, void 0, false, {
                                 fileName: "src/components/Restaurant.js",
-                                lineNumber: 44,
+                                lineNumber: 48,
                                 columnNumber: 25
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Restaurant.js",
-                        lineNumber: 40,
+                        lineNumber: 44,
                         columnNumber: 21
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/Restaurant.js",
-                    lineNumber: 39,
+                    lineNumber: 43,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Restaurant.js",
-                lineNumber: 38,
+                lineNumber: 42,
                 columnNumber: 13
             }, undefined),
             Categories.map((eachCategory, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restuarantCategoriesDefault.default), {
@@ -36749,13 +36748,17 @@ const Restaurant = ()=>{
                     setshowIndex: ()=>setshowIndex((previndex)=>previndex === index ? null : index)
                 }, eachCategory?.card.card.title, false, {
                     fileName: "src/components/Restaurant.js",
-                    lineNumber: 50,
+                    lineNumber: 54,
                     columnNumber: 21
                 }, undefined))
         ]
-    }, void 0, true);
+    }, void 0, true, {
+        fileName: "src/components/Restaurant.js",
+        lineNumber: 38,
+        columnNumber: 9
+    }, undefined);
 };
-_s(Restaurant, "QD/lY3+9ptM9WL84CYUDN8/XqqA=", false, function() {
+_s(Restaurant, "GARf5sKo/092Oh4P+OXKnSHp4kU=", false, function() {
     return [
         (0, _reactRouterDom.useParams),
         (0, _useRestaurantMenuDefault.default)
@@ -36771,7 +36774,7 @@ $RefreshReg$(_c, "Restaurant");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./shimmer":"fWXGy","react-router-dom":"9xmpe","../utils/useRestaurantMenu":"fMOkH","./RestuarantCategories":"7TmOU","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fMOkH":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./Shimmer":"g6ZGj","react-router-dom":"9xmpe","../utils/useRestaurantMenu":"fMOkH","./RestuarantCategories":"7TmOU","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../utils/DarkContextProvider":"9W1uk"}],"fMOkH":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$253c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -36788,10 +36791,10 @@ const useRestaurantMenu = (resId)=>{
     _s();
     const [ResInfo, setResInfo] = (0, _react.useState)(null);
     (0, _react.useEffect)(()=>{
-        fetchData();
+        fetchData(resId);
     }, []);
-    const fetchData = async ()=>{
-        const data = await fetch((0, _constants.SwiggyMenu) + resId);
+    const fetchData = async (resId)=>{
+        const data = await fetch(`http://localhost:4000/api/menu?restaurantId=${resId}`);
         const json = await data.json();
         setResInfo(json.data);
     };
@@ -36822,7 +36825,7 @@ const RestaurantCategories = ({ data, showItemList, setshowIndex })=>{
     // console.log(data)
     const { title } = data;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: " w-6/12 mx-auto my-5 p-4 bg-white shadow-md  font-bold cursor-pointer",
+        className: " w-6/12 mx-auto my-5 p-4  shadow-md  font-bold cursor-pointer",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "flex justify-between mb-4",

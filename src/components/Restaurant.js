@@ -3,10 +3,14 @@ import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategories from "./RestuarantCategories";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { DarkContext } from "../utils/DarkContextProvider";
 
 //for Restaurant Menu card
 const Restaurant = () => {
+
+
+    const { Theme } = useContext(DarkContext)
 
     const [showIndex, setshowIndex] = useState(null)
 
@@ -31,8 +35,8 @@ const Restaurant = () => {
 
 
     return (
-        <>
-            <div className="flex items-center flex-col justify-start font-medium text-lg">
+        <div >
+            <div className="flex items-center flex-col justify-start font-medium text-lg" >
                 <h1>{text}</h1>
             </div>
             <div className="flex mt-3 justify-center">
@@ -54,8 +58,8 @@ const Restaurant = () => {
                     />
                 ))}
 
+        </div>
 
-        </>
     );
 }
 

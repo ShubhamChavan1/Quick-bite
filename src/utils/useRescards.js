@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { swiggAPI } from "./constants"
+
 
 //custom hook for generating restuarants
 const useRescards = () => {
@@ -13,7 +13,7 @@ const useRescards = () => {
 
 
     const fetchData = async () => {
-        const data = await fetch(swiggAPI);
+        const data = await fetch("http://localhost:4000/api/restaurants?lat=19.0760&lng=72.8777");
 
         const json = await data.json()
 
