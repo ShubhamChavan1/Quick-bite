@@ -8,7 +8,7 @@ const useRestaurantMenu = (resId) => {
 
     useEffect(() => {
         fetchData(resId);
-    }, [])
+    }, [resId])
 
     const fetchData = async (resId) => {
         const data = await fetch(`https://menuproxyserver.onrender.com/api/menu?restaurantId=${resId}`)
