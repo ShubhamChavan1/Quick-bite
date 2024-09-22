@@ -661,10 +661,10 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _shimmer = require("./Shimmer");
-var _shimmerDefault = parcelHelpers.interopDefault(_shimmer);
 var _userContext = require("../utils/userContext");
 var _userContextDefault = parcelHelpers.interopDefault(_userContext);
+var _aboutShimmer = require("../components/AboutShimmer");
+var _aboutShimmerDefault = parcelHelpers.interopDefault(_aboutShimmer);
 class AboutClass extends (0, _reactDefault.default).Component {
     constructor(props){
         super(props);
@@ -680,16 +680,15 @@ class AboutClass extends (0, _reactDefault.default).Component {
             userInfo: json
         });
     }
-    //after setState is called
-    componentDidUpdate() {}
-    componentWillUnmount() {}
+    componentDidUpdate() {
+        console.log("component did updated");
+    }
     render() {
-        if (this.state.userInfo === null) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
+        return this.state.userInfo === null ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutShimmerDefault.default), {}, void 0, false, {
             fileName: "src/components/AboutClass.js",
-            lineNumber: 33,
-            columnNumber: 20
-        }, this);
-        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            lineNumber: 29,
+            columnNumber: 49
+        }, this) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: "container",
             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "box",
@@ -698,18 +697,18 @@ class AboutClass extends (0, _reactDefault.default).Component {
                         children: "About me"
                     }, void 0, false, {
                         fileName: "src/components/AboutClass.js",
-                        lineNumber: 38,
-                        columnNumber: 17
+                        lineNumber: 33,
+                        columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                         children: [
-                            "Username:  ",
+                            "Username: ",
                             this.state.userInfo.name
                         ]
                     }, void 0, true, {
                         fileName: "src/components/AboutClass.js",
-                        lineNumber: 39,
-                        columnNumber: 17
+                        lineNumber: 34,
+                        columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userContextDefault.default).Consumer, {
                         children: ({ loggedInUser })=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
@@ -719,13 +718,13 @@ class AboutClass extends (0, _reactDefault.default).Component {
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/AboutClass.js",
-                                lineNumber: 42,
-                                columnNumber: 42
+                                lineNumber: 37,
+                                columnNumber: 52
                             }, this)
                     }, void 0, false, {
                         fileName: "src/components/AboutClass.js",
-                        lineNumber: 41,
-                        columnNumber: 21
+                        lineNumber: 36,
+                        columnNumber: 25
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                         children: [
@@ -734,16 +733,16 @@ class AboutClass extends (0, _reactDefault.default).Component {
                         ]
                     }, void 0, true, {
                         fileName: "src/components/AboutClass.js",
-                        lineNumber: 46,
-                        columnNumber: 17
+                        lineNumber: 41,
+                        columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
                         href: "https://github.com/ShubhamChavan1",
                         children: "My GitHub Profile"
                     }, void 0, false, {
                         fileName: "src/components/AboutClass.js",
-                        lineNumber: 47,
-                        columnNumber: 17
+                        lineNumber: 42,
+                        columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: "avatar",
@@ -752,24 +751,24 @@ class AboutClass extends (0, _reactDefault.default).Component {
                             alt: ""
                         }, void 0, false, {
                             fileName: "src/components/AboutClass.js",
-                            lineNumber: 49,
-                            columnNumber: 21
+                            lineNumber: 44,
+                            columnNumber: 25
                         }, this)
                     }, void 0, false, {
                         fileName: "src/components/AboutClass.js",
-                        lineNumber: 48,
-                        columnNumber: 17
+                        lineNumber: 43,
+                        columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/AboutClass.js",
-                lineNumber: 37,
-                columnNumber: 13
+                lineNumber: 32,
+                columnNumber: 17
             }, this)
         }, void 0, false, {
             fileName: "src/components/AboutClass.js",
-            lineNumber: 36,
-            columnNumber: 16
+            lineNumber: 31,
+            columnNumber: 14
         }, this);
     }
 }
@@ -780,6 +779,36 @@ exports.default = AboutClass;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./Shimmer":"g6ZGj","../utils/userContext":"eBA1b","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1MCpU","1xC6H"], null, "parcelRequirec643")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../utils/userContext":"eBA1b","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../components/AboutShimmer":"XULah"}],"XULah":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$d129 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$d129.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const AboutShimmer = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "",
+        children: "about shimmer"
+    }, void 0, false, {
+        fileName: "src/components/AboutShimmer.js",
+        lineNumber: 6,
+        columnNumber: 9
+    }, undefined);
+};
+_c = AboutShimmer;
+exports.default = AboutShimmer;
+var _c;
+$RefreshReg$(_c, "AboutShimmer");
+
+  $parcel$ReactRefreshHelpers$d129.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["1MCpU","1xC6H"], null, "parcelRequirec643")
 
 //# sourceMappingURL=About.84db8bad.js.map

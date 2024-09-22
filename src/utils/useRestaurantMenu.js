@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { SwiggyMenu } from "./../utils/constants"
+
 
 //custom hook for restuarant menu data 
 const useRestaurantMenu = (resId) => {

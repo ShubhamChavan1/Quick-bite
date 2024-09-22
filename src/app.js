@@ -1,4 +1,4 @@
-import React, { StrictMode, useState } from 'react';
+import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client'
 import Body from './components/Body';
 import Header from './components/Header';
