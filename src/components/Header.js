@@ -28,7 +28,7 @@ const Header = () => {
                 color: Theme === 'white' ? 'black' : 'white'
             }}>
             <div className="my-2 ml-[100px] ">
-                <img className="w-[100px] h-[85px] object-contain" src={LOGO_URL} alt="logo" />
+                <Link to="/"><img className="w-[100px] h-[85px] object-contain" src={LOGO_URL} alt="logo" /></Link>
             </div>
 
             <div className="flex justify-between items-center">
@@ -42,8 +42,6 @@ const Header = () => {
                     <li className="mx-5 text-lg hover:underline">Online Status :{OnlineStatus ? "✅" : "❌"}</li>
                     <li className="mx-5 text-lg hover:underline"><Link to="/">Home</Link></li>
                     <li className="mx-5 text-lg hover:underline" ><Link to="/about">About</Link></li>
-                    <li className="mx-5 text-lg hover:underline" ><Link to="/contactus">Contact us</Link></li>
-                    <li className="mx-5 text-lg hover:underline"><Link to='/grocery'>Grocery</Link></li>
                     <li className="mx-5 text-lg hover:underline"><Link to="/cart">Cart - ({CartItems.length} items)</Link></li>
                     <div className="mb-3">
                         <button className="mx-5 rounded-md bg-gray-500 text-lg px-3 py-2" onClick={handleOnClick}>{state}</button>

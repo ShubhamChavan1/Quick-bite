@@ -14,7 +14,6 @@ import appStore from './utils/appStore';
 import Cart from './components/Cart';
 import Shimmer from './components/Shimmer';
 
-const Grocery = lazy(() => import("./components/Grocery"));
 const About = lazy(() => import('./components/About'));
 
 const AppLayout = () => {
@@ -51,26 +50,18 @@ const AppRouter = createBrowserRouter([
                     <About name={"Shubham Chavan"} location={"Mumbai"} Role={"SDE 1"} />
                 </Suspense>
             },
-            {
-                path: "/contactus",
-                element: <ContactUS />
-            },
+
             {
                 path: "/restaurant/:resId",
                 element: <Restaurant />
             },
 
             {
-                  path:"/cart",
-                  element:<Cart/>
+                path: "/cart",
+                element: <Cart />
             },
 
-            {
-                path: "/grocery",
-                element: <Suspense fallback={<Shimmer />}>
-                    <Grocery />
-                </Suspense>
-            }
+
         ]
     },
 
