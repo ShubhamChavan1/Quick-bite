@@ -12,7 +12,7 @@ const CheckOut = ({ CheckOutItems }) => {
 
     return (
         <div className="grid grid-cols-2 w-full ">
-            <div className="bg-gray-300 w-full h-full p-5">
+            <div className="bg-gray-300 w-full h-[690px] p-5">
                 <div className="mb-5 mt-10">
                     <span className="text-lg font-bold ml-9">Food items</span>
                     <span className="text-lg font-bold ml-[312px]">Total</span>

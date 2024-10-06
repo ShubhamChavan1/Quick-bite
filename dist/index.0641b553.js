@@ -41290,7 +41290,7 @@ const CheckOut = ({ CheckOutItems })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "grid grid-cols-2 w-full ",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "bg-gray-300 w-full h-full p-5",
+            className: "bg-gray-300 w-full h-[690px] p-5",
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "mb-5 mt-10",
