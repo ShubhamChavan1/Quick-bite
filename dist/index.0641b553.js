@@ -27534,14 +27534,14 @@ const RES_CARD = (props)=>{
                             src: (0, _constants.CDN_URL) + cloudinaryImageId
                         }, void 0, false, {
                             fileName: "src/components/RES_CARD.js",
-                            lineNumber: 13,
+                            lineNumber: 14,
                             columnNumber: 21
                         }, undefined),
                         props.children
                     ]
                 }, void 0, true, {
                     fileName: "src/components/RES_CARD.js",
-                    lineNumber: 12,
+                    lineNumber: 13,
                     columnNumber: 17
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27552,21 +27552,21 @@ const RES_CARD = (props)=>{
                             children: name
                         }, void 0, false, {
                             fileName: "src/components/RES_CARD.js",
-                            lineNumber: 18,
+                            lineNumber: 19,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
                             children: locality
                         }, void 0, false, {
                             fileName: "src/components/RES_CARD.js",
-                            lineNumber: 19,
+                            lineNumber: 20,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
                             children: cuisines.slice(0, 3).join(" , ") + "..."
                         }, void 0, false, {
                             fileName: "src/components/RES_CARD.js",
-                            lineNumber: 20,
+                            lineNumber: 21,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
@@ -27574,24 +27574,24 @@ const RES_CARD = (props)=>{
                             children: sla?.slaString
                         }, void 0, false, {
                             fileName: "src/components/RES_CARD.js",
-                            lineNumber: 21,
+                            lineNumber: 22,
                             columnNumber: 21
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/RES_CARD.js",
-                    lineNumber: 17,
+                    lineNumber: 18,
                     columnNumber: 17
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/RES_CARD.js",
-            lineNumber: 11,
+            lineNumber: 12,
             columnNumber: 13
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/RES_CARD.js",
-        lineNumber: 10,
+        lineNumber: 11,
         columnNumber: 9
     }, undefined);
 };
@@ -27610,7 +27610,7 @@ const withDiscountTag = (RES_CARD)=>{
                         children: header
                     }, void 0, false, {
                         fileName: "src/components/RES_CARD.js",
-                        lineNumber: 44,
+                        lineNumber: 45,
                         columnNumber: 26
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -27618,13 +27618,13 @@ const withDiscountTag = (RES_CARD)=>{
                         children: avgRating
                     }, void 0, false, {
                         fileName: "src/components/RES_CARD.js",
-                        lineNumber: 48,
+                        lineNumber: 49,
                         columnNumber: 21
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/RES_CARD.js",
-                lineNumber: 41,
+                lineNumber: 42,
                 columnNumber: 17
             }, undefined)
         }, void 0, false);
@@ -37062,7 +37062,7 @@ const ItemList = ({ itemsCards })=>{
     // console.log(itemsCards)
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: itemsCards.map((item)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "p-3 mb-3 flex justify-between   text-left border-black border-solid border-b-2",
+                className: "p-3 mb-3 flex justify-between  text-left border-black border-solid border-b-2",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: "w-9/12",
@@ -41196,6 +41196,8 @@ var _reactRedux = require("react-redux");
 var _itemList = require("./ItemList");
 var _itemListDefault = parcelHelpers.interopDefault(_itemList);
 var _cartSlice = require("../utils/CartSlice");
+var _checkOut = require("./CheckOut");
+var _checkOutDefault = parcelHelpers.interopDefault(_checkOut);
 var _s = $RefreshSig$();
 const Cart = ()=>{
     _s();
@@ -41210,66 +41212,40 @@ const Cart = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "text-center font-bold text-xl mt-4",
-                children: "Cart"
+                className: "text-center font-bold text-xl ",
+                children: CartItems.length === 0 && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "bg-red-500 h-full p-7",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                            children: "Looks like your Cart is Empty"
+                        }, void 0, false, {
+                            fileName: "src/components/Cart.js",
+                            lineNumber: 24,
+                            columnNumber: 25
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            children: "Visit the Home our page"
+                        }, void 0, false, {
+                            fileName: "src/components/Cart.js",
+                            lineNumber: 25,
+                            columnNumber: 25
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/Cart.js",
+                    lineNumber: 23,
+                    columnNumber: 21
+                }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Cart.js",
                 lineNumber: 21,
                 columnNumber: 13
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex justify-center items-center",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        className: "p-2 rounded-md m-5 border-black border-solid border-2 bg-black hover:bg-white hover:text-black  text-white",
-                        onClick: handleClearCart,
-                        children: "clear Cart"
-                    }, void 0, false, {
-                        fileName: "src/components/Cart.js",
-                        lineNumber: 25,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        className: "p-2 rounded-md m-5 border-black border-solid border-2 bg-black hover:bg-white hover:text-black  text-white",
-                        onClick: handleremoveItem,
-                        children: "remove Cart"
-                    }, void 0, false, {
-                        fileName: "src/components/Cart.js",
-                        lineNumber: 27,
-                        columnNumber: 17
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/Cart.js",
-                lineNumber: 24,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "text-center font-bold text-xl mt-4",
-                children: CartItems.length === 0 && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                    children: "Looks like your Cart is Empty"
-                }, void 0, false, {
-                    fileName: "src/components/Cart.js",
-                    lineNumber: 31,
-                    columnNumber: 44
-                }, undefined)
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _checkOutDefault.default), {
+                CheckOutItems: CartItems
             }, void 0, false, {
                 fileName: "src/components/Cart.js",
-                lineNumber: 30,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "w-6/12 m-auto",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _itemListDefault.default), {
-                    itemsCards: CartItems
-                }, void 0, false, {
-                    fileName: "src/components/Cart.js",
-                    lineNumber: 35,
-                    columnNumber: 17
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/components/Cart.js",
-                lineNumber: 34,
+                lineNumber: 29,
                 columnNumber: 13
             }, undefined)
         ]
@@ -41291,7 +41267,194 @@ $RefreshReg$(_c, "Cart");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-redux":"62sf7","./ItemList":"kZjho","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../utils/CartSlice":"jOiMX"}],"kxbq9":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-redux":"62sf7","./ItemList":"kZjho","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../utils/CartSlice":"jOiMX","./CheckOut":"k3k0S"}],"k3k0S":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$db7f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$db7f.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactRedux = require("react-redux");
+var _constants = require("../utils/constants");
+var _cartSlice = require("../utils/CartSlice");
+var _trashCanLogo = require("../utils/TrashCanLogo");
+var _s = $RefreshSig$();
+const CheckOut = ({ CheckOutItems })=>{
+    _s();
+    console.log(CheckOutItems);
+    const dispatch = (0, _reactRedux.useDispatch)();
+    const handleRemoveCart = ()=>dispatch((0, _cartSlice.removeItem)());
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "grid grid-cols-2 w-full ",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "bg-gray-300 w-full h-full p-5",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "mb-5 mt-10",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "text-lg font-bold ml-9",
+                            children: "Food items"
+                        }, void 0, false, {
+                            fileName: "src/components/CheckOut.js",
+                            lineNumber: 17,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "text-lg font-bold ml-[312px]",
+                            children: "Total"
+                        }, void 0, false, {
+                            fileName: "src/components/CheckOut.js",
+                            lineNumber: 18,
+                            columnNumber: 21
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/CheckOut.js",
+                    lineNumber: 16,
+                    columnNumber: 17
+                }, undefined),
+                CheckOutItems.map((item)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "hover:bg-orange-500 text-black font-bold p-5 rounded-md w-3/4 h-[150px] flex justify-between",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                className: "rounded-md mr-5",
+                                src: (0, _constants.CDN_URL) + item.card.info.imageId
+                            }, void 0, false, {
+                                fileName: "src/components/CheckOut.js",
+                                lineNumber: 23,
+                                columnNumber: 25
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                children: [
+                                    item.card.info.name,
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "mt-5",
+                                        children: item.card.info.inStock ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            children: " In Stock "
+                                        }, void 0, false, {
+                                            fileName: "src/components/CheckOut.js",
+                                            lineNumber: 27,
+                                            columnNumber: 59
+                                        }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            children: "out of Stock"
+                                        }, void 0, false, {
+                                            fileName: "src/components/CheckOut.js",
+                                            lineNumber: 27,
+                                            columnNumber: 83
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "src/components/CheckOut.js",
+                                        lineNumber: 26,
+                                        columnNumber: 29
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/CheckOut.js",
+                                lineNumber: 24,
+                                columnNumber: 25
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "mr-10",
+                                children: [
+                                    "\u20B9-",
+                                    item.card.info.price ? item.card.info.price / 100 : item.card.info.defaultPrice / 100
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/CheckOut.js",
+                                lineNumber: 30,
+                                columnNumber: 25
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                onClick: handleRemoveCart,
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _trashCanLogo.TrashCaLogo), {}, void 0, false, {
+                                    fileName: "src/components/CheckOut.js",
+                                    lineNumber: 31,
+                                    columnNumber: 60
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/components/CheckOut.js",
+                                lineNumber: 31,
+                                columnNumber: 25
+                            }, undefined)
+                        ]
+                    }, item.card.info.id, true, {
+                        fileName: "src/components/CheckOut.js",
+                        lineNumber: 22,
+                        columnNumber: 21
+                    }, undefined))
+            ]
+        }, void 0, true, {
+            fileName: "src/components/CheckOut.js",
+            lineNumber: 15,
+            columnNumber: 13
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/components/CheckOut.js",
+        lineNumber: 14,
+        columnNumber: 9
+    }, undefined);
+};
+_s(CheckOut, "rgTLoBID190wEKCp9+G8W6F7A5M=", false, function() {
+    return [
+        (0, _reactRedux.useDispatch)
+    ];
+});
+_c = CheckOut;
+exports.default = CheckOut;
+var _c;
+$RefreshReg$(_c, "CheckOut");
+
+  $parcel$ReactRefreshHelpers$db7f.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","react/jsx-dev-runtime":"iTorj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../utils/constants":"hB8jg","react-redux":"62sf7","../utils/CartSlice":"jOiMX","../utils/TrashCanLogo":"5FcPg"}],"5FcPg":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$66a8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$66a8.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "TrashCaLogo", ()=>TrashCaLogo);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const TrashCaLogo = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+        xmlns: "http://www.w3.org/2000/svg",
+        x: "0px",
+        y: "0px",
+        width: "30",
+        height: "30",
+        viewBox: "0 0 30 30",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+            d: "M 13 3 A 1.0001 1.0001 0 0 0 11.986328 4 L 6 4 A 1.0001 1.0001 0 1 0 6 6 L 24 6 A 1.0001 1.0001 0 1 0 24 4 L 18.013672 4 A 1.0001 1.0001 0 0 0 17 3 L 13 3 z M 6 8 L 6 24 C 6 25.105 6.895 26 8 26 L 22 26 C 23.105 26 24 25.105 24 24 L 24 8 L 6 8 z"
+        }, void 0, false, {
+            fileName: "src/utils/TrashCanLogo.js",
+            lineNumber: 4,
+            columnNumber: 13
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/utils/TrashCanLogo.js",
+        lineNumber: 3,
+        columnNumber: 9
+    }, undefined);
+};
+_c = TrashCaLogo;
+var _c;
+$RefreshReg$(_c, "TrashCaLogo");
+
+  $parcel$ReactRefreshHelpers$66a8.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kxbq9":[function(require,module,exports) {
 module.exports = require("535a57bc6058ab64")(require("ce65c7bc875b282e").getBundleURL("lPpKD") + "About.84db8bad.js" + "?" + Date.now()).catch((err)=>{
     delete module.bundle.cache[module.id];
     throw err;

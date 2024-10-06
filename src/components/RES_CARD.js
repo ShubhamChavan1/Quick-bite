@@ -2,6 +2,7 @@ import { CDN_URL } from "../utils/constants";
 
 const RES_CARD = (props) => {
     const { res_data } = props
+
     const { name, locality, cuisines, cloudinaryImageId, sla } = res_data?.info
 
 
@@ -17,7 +18,7 @@ const RES_CARD = (props) => {
                 <div className="p-4 ">
                     <h3 className="font-bold text-lg">{name}</h3>
                     <h4>{locality}</h4>
-                    <h4>{cuisines.slice(0,3).join(" , ")+ "..."}</h4>
+                    <h4>{cuisines.slice(0, 3).join(" , ") + "..."}</h4>
                     <h4 className="font-bold">{sla?.slaString}</h4>
                 </div>
             </div>

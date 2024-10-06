@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import ItemList from "./ItemList";
 import { clearCart, removeItem } from "../utils/CartSlice";
-
+import CheckOut from "./CheckOut";
 
 const Cart = () => {
     const CartItems = useSelector((store) => store.cart.items)
@@ -18,22 +18,17 @@ const Cart = () => {
 
     return (
         <>
-            <div className="text-center font-bold text-xl mt-4">
-                Cart
+            <div className="text-center font-bold text-xl ">
+                {CartItems.length === 0 &&
+                    <div className="bg-red-500 h-full p-7">
+                        <h1>Looks like your Cart is Empty</h1>
+                        <p>Visit the Home our page</p>
+                    </div>
+                }
             </div>
-            <div className="flex justify-center items-center">
-                <button className="p-2 rounded-md m-5 border-black border-solid border-2 bg-black hover:bg-white hover:text-black  text-white"
-                    onClick={handleClearCart}>clear Cart</button>
-                <button className="p-2 rounded-md m-5 border-black border-solid border-2 bg-black hover:bg-white hover:text-black  text-white"
-                    onClick={handleremoveItem}>remove Cart</button>
-            </div>
-            <div className="text-center font-bold text-xl mt-4">
-                {CartItems.length === 0 && <h1>Looks like your Cart is Empty</h1>}
-            </div>
+            <CheckOut CheckOutItems={CartItems} />
+            {/* <ItemList itemsCards={CartItems} /> */}
 
-            <div className="w-6/12 m-auto">
-                <ItemList itemsCards={CartItems} />
-            </div>
 
         </>
     );

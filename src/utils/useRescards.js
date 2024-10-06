@@ -23,7 +23,6 @@ const useRescards = () => {
     }
 
     //SearchResult
-
     const [search, setSEARCH] = useState(" ")
 
     const handleOnChange = (event) => {

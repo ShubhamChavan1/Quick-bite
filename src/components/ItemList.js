@@ -17,7 +17,7 @@ const ItemList = ({ itemsCards }) => {
         <div>
             {itemsCards.map((item) => (
 
-                <div key={item.card.info.id} className="p-3 mb-3 flex justify-between   text-left border-black border-solid border-b-2" >
+                <div key={item.card.info.id} className="p-3 mb-3 flex justify-between  text-left border-black border-solid border-b-2" >
 
                     <div className="w-9/12">
 
