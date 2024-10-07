@@ -1,20 +1,9 @@
-import { useDispatch, useSelector } from "react-redux";
-import ItemList from "./ItemList";
-import { clearCart, removeItem } from "../utils/CartSlice";
+import { useSelector } from "react-redux";
+
 import CheckOut from "./CheckOut";
 
 const Cart = () => {
     const CartItems = useSelector((store) => store.cart.items)
-
-    const dispatch = useDispatch();
-
-    const handleClearCart = () => {
-        dispatch(clearCart())
-    }
-
-    const handleremoveItem = () => {
-        dispatch(removeItem())
-    }
 
     return (
         <>
@@ -27,7 +16,6 @@ const Cart = () => {
                 }
             </div>
             <CheckOut CheckOutItems={CartItems} />
-            {/* <ItemList itemsCards={CartItems} /> */}
 
 
         </>
