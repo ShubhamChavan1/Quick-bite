@@ -788,7 +788,7 @@ exports.default = AboutClass;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../utils/userContext":"eBA1b","./GithubLogo":"3N4oz","../utils/DarkContextProvider":"9W1uk","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../components/Shimmer":"g6ZGj"}],"3N4oz":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../utils/userContext":"eBA1b","./GithubLogo":"3N4oz","../utils/DarkContextProvider":"9W1uk","../components/Shimmer":"g6ZGj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3N4oz":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$6c3b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
