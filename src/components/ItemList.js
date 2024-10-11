@@ -60,13 +60,13 @@ const ItemList = ({ itemsCards }) => {
                                 <img className="w-[144px] bg-orange-200 h-auto object-cover rounded-lg" src={CDN_URL + item.card.info.imageId} alt="food-image" />
                                 {
                                     itemQuantity === 0 ?
-                                        <button className="text-green-600 hover:bg-slate-200 bg-white shadow-lg px-10 py-[4px] rounded-lg absolute left-5 bottom-0"
+                                        <button className="text-green-600 hover:bg-slate-200 bg-white shadow-lg px-10 py-[4px] rounded-lg absolute left-7 bottom-0"
                                             onClick={() => handleAddItem(item)}>ADD</button>
                                         :
-                                        <div>
-                                            <button onClick={() => handleAddItem(item)}>+</button>
-                                            <span>{itemQuantity}</span>
-                                            <button onClick={() => handleRemoveItem(item)}>-</button>
+                                        <div className="bg-white rounded-lg flex items-center shadow-lg  absolute left-7   bottom-0">
+                                            <button className="bg-white px-5 py-[4px]  rounded-l-md hover:bg-slate-200 text-green-500" onClick={() => handleAddItem(item)}>+</button>
+                                            <span className='text-green-500 mx-2'>{itemQuantity}</span>
+                                            <button className="bg-white px-5  py-[4px] rounded-r-md hover:bg-slate-200  text-green-500" onClick={() => handleRemoveItem(item)}>-</button>
                                         </div>
                                 }
 

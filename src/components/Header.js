@@ -33,7 +33,7 @@ const Header = () => {
 
             <div className="flex justify-between items-center">
                 <ul className="flex p-5 mt-5 ">
-                    <li className="mx-5 text-lg">Toggle Dark Mode:
+                    <li className="mx-5 text-lg">
                         <button className={`px-3 py-2 mx-2 rounded-md ${Theme === 'white' ? 'bg-white' : 'bg-black'} ${Theme === 'white' ? 'text-black' : 'text-white'} `}
                             onClick={toggleTheme}>
                             Dark Mode : {darkState}
