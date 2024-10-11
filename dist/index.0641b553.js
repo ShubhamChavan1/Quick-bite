@@ -27530,7 +27530,7 @@ const RES_CARD = (props)=>{
                     className: "relative",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            className: "w-full h-80 rounded-t-md",
+                            className: "max-w-full h-80 object-cover rounded-t-md",
                             src: (0, _constants.CDN_URL) + cloudinaryImageId
                         }, void 0, false, {
                             fileName: "src/components/RES_CARD.js",
@@ -36987,6 +36987,7 @@ const RestaurantCategories = ({ data, showItemList, setshowIndex })=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "flex justify-between mb-4",
+                onClick: setshowIndex,
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: [
@@ -37001,7 +37002,6 @@ const RestaurantCategories = ({ data, showItemList, setshowIndex })=>{
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        onClick: setshowIndex,
                         children: "\uD83D\uDD3D"
                     }, void 0, false, {
                         fileName: "src/components/RestuarantCategories.js",
@@ -37054,92 +37054,151 @@ var _cartSlice = require("../utils/CartSlice");
 var _s = $RefreshSig$();
 const ItemList = ({ itemsCards })=>{
     _s();
+    const CartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
     const dispatch = (0, _reactRedux.useDispatch)();
     //dispatching an action to call reducer of cart
     const handleAddItem = (item)=>{
         dispatch((0, _cartSlice.addItem)(item));
     };
+    const handleRemoveItem = (item)=>{
+        dispatch((0, _cartSlice.removeItem)(item));
+    };
+    const getItemCount = (itemId)=>{
+        const item = CartItems.find((item)=>item.card.info.id === itemId);
+        console.log(item);
+        return item ? item.quantity : 0;
+    };
     // console.log(itemsCards)
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: itemsCards.map((item)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: itemsCards.map((item)=>{
+            const itemId = item.card.info.id;
+            const itemQuantity = getItemCount(itemId);
+            const { vegClassifier } = item.card.info.itemAttribute;
+            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "p-3 mb-3 flex justify-between  text-left border-black border-solid border-b-2",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: "w-9/12",
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                children: item.card.info.name
-                            }, void 0, false, {
-                                fileName: "src/components/ItemList.js",
-                                lineNumber: 24,
-                                columnNumber: 25
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                className: "mx-1",
+                                className: "flex",
                                 children: [
-                                    " \u20B9-",
+                                    vegClassifier === "VEG" ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "border-2 border-green-600 rounded-md px-[5px] py-[2px] text-xs mr-2 text-green-600 w-fit",
+                                        children: "\u2B24"
+                                    }, void 0, false, {
+                                        fileName: "src/components/ItemList.js",
+                                        lineNumber: 46,
+                                        columnNumber: 41
+                                    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "border-2 border-red-600 rounded-md px-[5px] py-[2px]  text-xs mr-2 text-red-600 w-fit",
+                                        children: "\u25B2"
+                                    }, void 0, false, {
+                                        fileName: "src/components/ItemList.js",
+                                        lineNumber: 50,
+                                        columnNumber: 41
+                                    }, undefined),
+                                    item.card.info.name
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/ItemList.js",
+                                lineNumber: 44,
+                                columnNumber: 33
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "mt-3 text-xs",
+                                children: [
+                                    " \u20B9 ",
                                     item.card.info.price ? item.card.info.price / 100 : item.card.info.defaultPrice / 100
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/ItemList.js",
-                                lineNumber: 25,
-                                columnNumber: 25
+                                lineNumber: 55,
+                                columnNumber: 33
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "mt-3 p-5 text-gray-500 font-mono",
+                                className: "mt-2 text-gray-500 text-xs",
                                 children: item.card.info.description
                             }, void 0, false, {
                                 fileName: "src/components/ItemList.js",
-                                lineNumber: 26,
-                                columnNumber: 25
+                                lineNumber: 57,
+                                columnNumber: 33
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/ItemList.js",
-                        lineNumber: 22,
-                        columnNumber: 21
+                        lineNumber: 43,
+                        columnNumber: 29
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: "w-3/12  p-4 relative",
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                className: "w-[200px] h-[144px]",
+                                className: "w-[144px] bg-orange-200 h-auto object-cover rounded-lg",
                                 src: (0, _constants.CDN_URL) + item.card.info.imageId,
                                 alt: "food-image"
                             }, void 0, false, {
                                 fileName: "src/components/ItemList.js",
-                                lineNumber: 29,
-                                columnNumber: 25
+                                lineNumber: 60,
+                                columnNumber: 33
                             }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                className: " absolute bottom-1 left-1/2 transform -translate-x-1/2 border-black border-solid border-2 bg-black hover:bg-white hover:text-black text-white p-2",
+                            itemQuantity === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                className: "text-green-600 hover:bg-slate-200 bg-white shadow-lg px-10 py-[4px] rounded-lg absolute left-5 bottom-0",
                                 onClick: ()=>handleAddItem(item),
-                                children: "ADD+"
+                                children: "ADD"
                             }, void 0, false, {
                                 fileName: "src/components/ItemList.js",
-                                lineNumber: 30,
-                                columnNumber: 25
+                                lineNumber: 63,
+                                columnNumber: 41
+                            }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                        onClick: ()=>handleAddItem(item),
+                                        children: "+"
+                                    }, void 0, false, {
+                                        fileName: "src/components/ItemList.js",
+                                        lineNumber: 67,
+                                        columnNumber: 45
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        children: itemQuantity
+                                    }, void 0, false, {
+                                        fileName: "src/components/ItemList.js",
+                                        lineNumber: 68,
+                                        columnNumber: 45
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                        onClick: ()=>handleRemoveItem(item),
+                                        children: "-"
+                                    }, void 0, false, {
+                                        fileName: "src/components/ItemList.js",
+                                        lineNumber: 69,
+                                        columnNumber: 45
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/ItemList.js",
+                                lineNumber: 66,
+                                columnNumber: 41
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/ItemList.js",
-                        lineNumber: 28,
-                        columnNumber: 21
+                        lineNumber: 59,
+                        columnNumber: 29
                     }, undefined)
                 ]
-            }, item.card.info.id, true, {
+            }, itemId, true, {
                 fileName: "src/components/ItemList.js",
-                lineNumber: 20,
-                columnNumber: 17
-            }, undefined))
-    }, void 0, false, {
-        fileName: "src/components/ItemList.js",
-        lineNumber: 17,
-        columnNumber: 9
-    }, undefined);
+                lineNumber: 42,
+                columnNumber: 25
+            }, undefined);
+        })
+    }, void 0, false);
 };
-_s(ItemList, "rgTLoBID190wEKCp9+G8W6F7A5M=", false, function() {
+_s(ItemList, "PBETJ0uJTI9kk6UNM+LIPc+7rS8=", false, function() {
     return [
+        (0, _reactRedux.useSelector),
         (0, _reactRedux.useDispatch)
     ];
 });
@@ -37167,12 +37226,21 @@ const CartSlice = (0, _toolkit.createSlice)({
     },
     reducers: {
         addItem: (state, action)=>{
-            state.items.push(action.payload);
+            const itemId = action.payload.card.info.id;
+            const existingItem = state.items.find((item)=>item.card.info.id === itemId);
+            if (existingItem) existingItem.quantity += 1;
+            else state.items.push({
+                ...action.payload,
+                quantity: 1
+            });
         },
         removeItem: (state, action)=>{
-            state.items = state.items.filter((item)=>{
-                return item.card.info.id !== action.payload;
-            });
+            const itemId = action.payload.card.info.id;
+            const existingItem = state.items.find((item)=>item.card.info.id === itemId);
+            if (existingItem) existingItem.quantity -= 1;
+            if (existingItem.quantity === 0) //if true the item is kept in items array 
+            //if false the item is removed from array
+            state.items = state.items.filter((item)=>item.card.info.id !== itemId);
         },
         clearCart: (state, action)=>{
             state.items.length = 0;
@@ -41277,9 +41345,11 @@ const CheckOut = ({ CheckOutItems })=>{
     _s();
     console.log(CheckOutItems);
     const dispatch = (0, _reactRedux.useDispatch)();
+    const ItemTotal = CheckOutItems.reduce((total, item)=>total + (item.card.info.price ? item.card.info.price / 100 : item.card.info.defaultPrice / 100), 0);
     const TotalPay = CheckOutItems.length > 0 ? CheckOutItems.reduce((total, item)=>{
         return total + (item.card.info.price ? item.card.info.price / 100 : item.card.info.defaultPrice / 100) + 15 + 81.79;
     }, 0) : null;
+    // const formatedTotalPay = TotalPay.toFixed(2) 
     //dispatch an action remove item from cart
     const handleRemoveCart = (item)=>dispatch((0, _cartSlice.removeItem)(item));
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -41295,24 +41365,23 @@ const CheckOut = ({ CheckOutItems })=>{
                             children: "Food items"
                         }, void 0, false, {
                             fileName: "src/components/CheckOut.js",
-                            lineNumber: 26,
+                            lineNumber: 35,
                             columnNumber: 21
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/CheckOut.js",
-                        lineNumber: 25,
+                        lineNumber: 34,
                         columnNumber: 17
                     }, undefined),
                     CheckOutItems.map((item)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             className: "hover:bg-orange-500 text-sm text-black font-bold p-5 rounded-md w-4/5 h-[150px] flex justify-between",
                             children: [
-                                "//add img same size",
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                                     className: "rounded-md mr-5 border-2 border-orange-400 border-solid",
                                     src: (0, _constants.CDN_URL) + item.card.info.imageId
                                 }, void 0, false, {
                                     fileName: "src/components/CheckOut.js",
-                                    lineNumber: 32,
+                                    lineNumber: 41,
                                     columnNumber: 25
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -41326,14 +41395,14 @@ const CheckOut = ({ CheckOutItems })=>{
                                                     children: " In Stock "
                                                 }, void 0, false, {
                                                     fileName: "src/components/CheckOut.js",
-                                                    lineNumber: 37,
+                                                    lineNumber: 46,
                                                     columnNumber: 37
                                                 }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                                     className: "bg-red-600 p-3  rounded-md text-white",
                                                     children: "out of Stock"
                                                 }, void 0, false, {
                                                     fileName: "src/components/CheckOut.js",
-                                                    lineNumber: 38,
+                                                    lineNumber: 47,
                                                     columnNumber: 39
                                                 }, undefined),
                                                 item.card.info.isVeg ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -41341,26 +41410,26 @@ const CheckOut = ({ CheckOutItems })=>{
                                                     children: "Veg"
                                                 }, void 0, false, {
                                                     fileName: "src/components/CheckOut.js",
-                                                    lineNumber: 40,
+                                                    lineNumber: 49,
                                                     columnNumber: 37
                                                 }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                                     className: "bg-red-600 p-3 ml-5 rounded-2xl text-white",
                                                     children: "Non Veg"
                                                 }, void 0, false, {
                                                     fileName: "src/components/CheckOut.js",
-                                                    lineNumber: 42,
+                                                    lineNumber: 51,
                                                     columnNumber: 37
                                                 }, undefined)
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/components/CheckOut.js",
-                                            lineNumber: 35,
+                                            lineNumber: 44,
                                             columnNumber: 29
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/CheckOut.js",
-                                    lineNumber: 33,
+                                    lineNumber: 42,
                                     columnNumber: 25
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -41371,51 +41440,51 @@ const CheckOut = ({ CheckOutItems })=>{
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/CheckOut.js",
-                                    lineNumber: 46,
+                                    lineNumber: 55,
                                     columnNumber: 25
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                                     onClick: ()=>handleRemoveCart(item.card.info.id),
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _trashCanLogo.TrashCaLogo), {}, void 0, false, {
                                         fileName: "src/components/CheckOut.js",
-                                        lineNumber: 47,
+                                        lineNumber: 56,
                                         columnNumber: 85
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/components/CheckOut.js",
-                                    lineNumber: 47,
+                                    lineNumber: 56,
                                     columnNumber: 25
                                 }, undefined)
                             ]
                         }, item.card.info.id, true, {
                             fileName: "src/components/CheckOut.js",
-                            lineNumber: 30,
+                            lineNumber: 39,
                             columnNumber: 21
                         }, undefined))
                 ]
             }, void 0, true, {
                 fileName: "src/components/CheckOut.js",
-                lineNumber: 24,
+                lineNumber: 33,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "flex flex-col justify-center items-center",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "border-2 border-solid border-black w-[400px] h-[500px] p-5",
+                    className: "border-2 border-solid border-black w-[400px] h-[500px] p-5 fixed top-44 ",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             className: "flex justify-center mb-4",
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                className: "h-28",
+                                className: "h-28 ",
                                 src: (0, _constants.LOGO_URL)
                             }, void 0, false, {
                                 fileName: "src/components/CheckOut.js",
-                                lineNumber: 56,
+                                lineNumber: 65,
                                 columnNumber: 25
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/CheckOut.js",
-                            lineNumber: 55,
+                            lineNumber: 64,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -41423,7 +41492,7 @@ const CheckOut = ({ CheckOutItems })=>{
                             children: "Billing Details"
                         }, void 0, false, {
                             fileName: "src/components/CheckOut.js",
-                            lineNumber: 58,
+                            lineNumber: 67,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -41433,20 +41502,20 @@ const CheckOut = ({ CheckOutItems })=>{
                                     children: " Item total "
                                 }, void 0, false, {
                                     fileName: "src/components/CheckOut.js",
-                                    lineNumber: 61,
+                                    lineNumber: 70,
                                     columnNumber: 25
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                    children: CheckOutItems.reduce((total, item)=>total + (item.card.info.price ? item.card.info.price / 100 : item.card.info.defaultPrice / 100), 0)
+                                    children: ItemTotal
                                 }, void 0, false, {
                                     fileName: "src/components/CheckOut.js",
-                                    lineNumber: 62,
+                                    lineNumber: 71,
                                     columnNumber: 25
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/CheckOut.js",
-                            lineNumber: 60,
+                            lineNumber: 69,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -41456,20 +41525,20 @@ const CheckOut = ({ CheckOutItems })=>{
                                     children: "Delivery"
                                 }, void 0, false, {
                                     fileName: "src/components/CheckOut.js",
-                                    lineNumber: 67,
+                                    lineNumber: 74,
                                     columnNumber: 25
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                     children: "\u20B915"
                                 }, void 0, false, {
                                     fileName: "src/components/CheckOut.js",
-                                    lineNumber: 68,
+                                    lineNumber: 75,
                                     columnNumber: 25
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/CheckOut.js",
-                            lineNumber: 66,
+                            lineNumber: 73,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -41479,55 +41548,44 @@ const CheckOut = ({ CheckOutItems })=>{
                                     children: "GST and Restaurant Charges"
                                 }, void 0, false, {
                                     fileName: "src/components/CheckOut.js",
-                                    lineNumber: 72,
+                                    lineNumber: 79,
                                     columnNumber: 25
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                     children: "\u20B981.79"
                                 }, void 0, false, {
                                     fileName: "src/components/CheckOut.js",
-                                    lineNumber: 73,
+                                    lineNumber: 80,
                                     columnNumber: 25
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/CheckOut.js",
-                            lineNumber: 71,
+                            lineNumber: 78,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             className: "border-b-2 border-black mb-5"
                         }, void 0, false, {
                             fileName: "src/components/CheckOut.js",
-                            lineNumber: 76,
-                            columnNumber: 21
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "flex justify-between",
-                            children: [
-                                "To Pay",
-                                TotalPay
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/CheckOut.js",
-                            lineNumber: 78,
+                            lineNumber: 83,
                             columnNumber: 21
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/CheckOut.js",
-                    lineNumber: 54,
+                    lineNumber: 63,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/CheckOut.js",
-                lineNumber: 53,
+                lineNumber: 62,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/CheckOut.js",
-        lineNumber: 23,
+        lineNumber: 32,
         columnNumber: 9
     }, undefined);
 };

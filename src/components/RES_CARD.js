@@ -11,7 +11,7 @@ const RES_CARD = (props) => {
         <div className="flex justify-center items-center h-full">
             <div className="w-[250px] h-[500px] rounded-md border border-solid border-black hover:bg-gray-300 ">
                 <div className="relative">
-                    <img className="w-full h-80 rounded-t-md" src={CDN_URL + cloudinaryImageId} />
+                    <img className="max-w-full h-80 object-cover rounded-t-md" src={CDN_URL + cloudinaryImageId} />
                     {props.children}
                 </div>
 

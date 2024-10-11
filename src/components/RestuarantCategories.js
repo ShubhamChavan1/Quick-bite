@@ -7,9 +7,9 @@ const RestaurantCategories = ({ data, showItemList, setshowIndex }) => {
     const { title } = data;
     return (
         <div className=" w-6/12 mx-auto my-5 p-4  shadow-md  font-bold cursor-pointer"  >
-            <div className="flex justify-between mb-4"  >
+            <div className="flex justify-between mb-4"onClick={setshowIndex}  >
                 <span >{title} ({data.itemCards.length})</span>
-                <span onClick={setshowIndex}>🔽</span>
+                <span>🔽</span>
             </div>
 
             {showItemList && <ItemList itemsCards={data.itemCards} />}
