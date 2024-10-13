@@ -19,7 +19,7 @@ const ItemList = ({ itemsCards }) => {
     const getItemCount = (itemId) => {
 
         const item = CartItems.find((item) => item.card.info.id === itemId)
-        console.log(item)
+
         return item ? item.quantity : 0
 
     }
@@ -41,7 +41,7 @@ const ItemList = ({ itemsCards }) => {
                     return (
                         <div key={itemId} className="p-3 mb-3 flex justify-between  text-left border-black border-solid border-b-2" >
                             <div className="w-9/12">
-                                <span className="flex">
+                                <span className="flex items-center" >
                                     {vegClassifier === "VEG" ?
                                         <div className="border-2 border-green-600 rounded-md px-[5px] py-[2px] text-xs mr-2 text-green-600 w-fit">
                                             ⬤
@@ -50,7 +50,7 @@ const ItemList = ({ itemsCards }) => {
                                         <div className="border-2 border-red-600 rounded-md px-[5px] py-[2px]  text-xs mr-2 text-red-600 w-fit">
                                             ▲
                                         </div>}
-                                    {item.card.info.name}
+                                    <span>{item.card.info.name}</span>
                                 </span>
                                 <div className="mt-3 text-xs"> ₹ {item.card.info.price ? item.card.info.price / 100 : item.card.info.defaultPrice / 100}</div>
 

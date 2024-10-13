@@ -2,7 +2,12 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    fontFamily: {
+      'Swiggy': ['"ProximaNova"', 'arial', '"Helvetica Neue"', 'sans-serif']
+    },
+    extend: {
+
+    },
   },
   plugins: [],
 }

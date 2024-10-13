@@ -36820,15 +36820,15 @@ const Restaurant = ()=>{
         lineNumber: 24,
         columnNumber: 16
     }, undefined);
-    const { avgRating, totalRatingsString, costForTwoMessage, cuisines } = ResInfo?.cards[2].card.card.info;
-    // console.log(ResInfo)
+    const { avgRating, totalRatingsString, costForTwoMessage, cuisines, areaName, sla } = ResInfo?.cards[2].card.card.info;
+    console.log(ResInfo);
     const { text } = ResInfo?.cards?.[0]?.card?.card;
     const Categories = ResInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c)=>c.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
     // console.log(Categories)
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex items-center flex-col justify-start font-medium text-lg",
+                className: "flex justify-center mr-[600px] mt-[50px] mb-2  font-bold font-Prox text-2xl",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                     children: text
                 }, void 0, false, {
@@ -36842,19 +36842,36 @@ const Restaurant = ()=>{
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex mt-3 justify-center",
+                className: "flex justify-center ",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "flex justify-start w-[800px] h-[200px] rounded-3xl border-[20px] border-solid border-rgba(40, 44, 63, .1)",
+                    className: " rounded-3xl p-1  bg-gray-300 bg-gradient-to-b from-white",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "font-bold text-left m-3",
+                        className: "w-[800px] h-[150px] border-gray-200 border-solid border-2 bg-white font-Prox text-left m-3 p-5 rounded-xl",
                         children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                                className: "",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "font-bold font-Prox",
                                 children: [
-                                    " Rating: ",
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        className: "text-white rounded-full pb-[3px] px-[6px] mr-2 text-sm bg-green-600 leading-none",
+                                        children: "\u2605"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Restaurant.js",
+                                        lineNumber: 47,
+                                        columnNumber: 29
+                                    }, undefined),
                                     avgRating,
-                                    " ,Total Ratings ",
-                                    totalRatingsString
+                                    " (",
+                                    totalRatingsString,
+                                    ")",
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        className: "text-gray-400 mx-2",
+                                        children: "\u2022"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Restaurant.js",
+                                        lineNumber: 50,
+                                        columnNumber: 29
+                                    }, undefined),
+                                    costForTwoMessage
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/Restaurant.js",
@@ -36862,22 +36879,92 @@ const Restaurant = ()=>{
                                 columnNumber: 25
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                                children: cuisines.join(" , ")
+                                className: "font-Prox font-bold mt-2 underline text-orange-500",
+                                children: cuisines.join(",")
                             }, void 0, false, {
                                 fileName: "src/components/Restaurant.js",
-                                lineNumber: 47,
+                                lineNumber: 53,
                                 columnNumber: 25
                             }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                                children: costForTwoMessage
-                            }, void 0, false, {
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "flex",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "flex flex-col leading-none text-gray-500 text-center",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                className: "leading-none -mb-3 text-3xl",
+                                                children: "\u2022"
+                                            }, void 0, false, {
+                                                fileName: "src/components/Restaurant.js",
+                                                lineNumber: 56,
+                                                columnNumber: 33
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                className: "",
+                                                children: "|"
+                                            }, void 0, false, {
+                                                fileName: "src/components/Restaurant.js",
+                                                lineNumber: 57,
+                                                columnNumber: 33
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                className: "",
+                                                children: "|"
+                                            }, void 0, false, {
+                                                fileName: "src/components/Restaurant.js",
+                                                lineNumber: 58,
+                                                columnNumber: 33
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                className: "leading-none -mt-3 text-3xl",
+                                                children: "\u2022"
+                                            }, void 0, false, {
+                                                fileName: "src/components/Restaurant.js",
+                                                lineNumber: 59,
+                                                columnNumber: 33
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/components/Restaurant.js",
+                                        lineNumber: 55,
+                                        columnNumber: 29
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "flex flex-col text-sm mx-2 mt-2 mb-1 justify-between font-Swiggy font-bold",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                children: areaName
+                                            }, void 0, false, {
+                                                fileName: "src/components/Restaurant.js",
+                                                lineNumber: 62,
+                                                columnNumber: 33
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                children: [
+                                                    "Delivery Time - ",
+                                                    sla.slaString
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "src/components/Restaurant.js",
+                                                lineNumber: 63,
+                                                columnNumber: 33
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/components/Restaurant.js",
+                                        lineNumber: 61,
+                                        columnNumber: 29
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
                                 fileName: "src/components/Restaurant.js",
-                                lineNumber: 48,
+                                lineNumber: 54,
                                 columnNumber: 25
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {}, void 0, false, {
                                 fileName: "src/components/Restaurant.js",
-                                lineNumber: 49,
+                                lineNumber: 67,
                                 columnNumber: 25
                             }, undefined)
                         ]
@@ -36902,7 +36989,7 @@ const Restaurant = ()=>{
                     setshowIndex: ()=>setshowIndex((previndex)=>previndex === index ? null : index)
                 }, eachCategory?.card.card.title, false, {
                     fileName: "src/components/Restaurant.js",
-                    lineNumber: 55,
+                    lineNumber: 73,
                     columnNumber: 21
                 }, undefined))
         ]
@@ -37062,7 +37149,6 @@ const ItemList = ({ itemsCards })=>{
     };
     const getItemCount = (itemId)=>{
         const item = CartItems.find((item)=>item.card.info.id === itemId);
-        console.log(item);
         return item ? item.quantity : 0;
     };
     // console.log(itemsCards)
@@ -37078,7 +37164,7 @@ const ItemList = ({ itemsCards })=>{
                         className: "w-9/12",
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                className: "flex",
+                                className: "flex items-center",
                                 children: [
                                     vegClassifier === "VEG" ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                         className: "border-2 border-green-600 rounded-md px-[5px] py-[2px] text-xs mr-2 text-green-600 w-fit",
@@ -37095,7 +37181,13 @@ const ItemList = ({ itemsCards })=>{
                                         lineNumber: 50,
                                         columnNumber: 41
                                     }, undefined),
-                                    item.card.info.name
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        children: item.card.info.name
+                                    }, void 0, false, {
+                                        fileName: "src/components/ItemList.js",
+                                        lineNumber: 53,
+                                        columnNumber: 37
+                                    }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/ItemList.js",
@@ -41268,10 +41360,30 @@ var _reactRouterDom = require("react-router-dom");
 var _itemList = require("./ItemList");
 var _itemListDefault = parcelHelpers.interopDefault(_itemList);
 var _constants = require("../utils/constants");
+var _react = require("react");
 var _s = $RefreshSig$();
 const Cart = ()=>{
     _s();
     const CartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
+    const itemTotal = CartItems.map((item)=>{
+        const price = item.card.info.price || item.card.info.defaultPrice;
+        return price / 100 * item.quantity;
+    }).reduce((acc, curr)=>acc + curr, 0);
+    const TotalPay = itemTotal + 15;
+    const [isScrolled, setScrolled] = (0, _react.useState)(false);
+    const containerRef = (0, _react.useRef)(null);
+    (0, _react.useEffect)(()=>{
+        const handleScroll = ()=>{
+            const container = containerRef.current;
+            if (container.scrollTop > 0) setScrolled(true);
+            else setScrolled(false);
+        };
+        const container = containerRef.current;
+        container?.addEventListener("scroll", handleScroll);
+        return ()=>{
+            container?.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: CartItems.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: "font-bold mt-14 flex flex-col justify-center items-center",
@@ -41282,7 +41394,7 @@ const Cart = ()=>{
                     alt: ""
                 }, void 0, false, {
                     fileName: "src/components/Cart.js",
-                    lineNumber: 14,
+                    lineNumber: 47,
                     columnNumber: 21
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -41290,7 +41402,7 @@ const Cart = ()=>{
                     children: "Your Cart is Empty"
                 }, void 0, false, {
                     fileName: "src/components/Cart.js",
-                    lineNumber: 15,
+                    lineNumber: 48,
                     columnNumber: 21
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -41298,7 +41410,7 @@ const Cart = ()=>{
                     children: "You can go to home page to view more restaurants"
                 }, void 0, false, {
                     fileName: "src/components/Cart.js",
-                    lineNumber: 16,
+                    lineNumber: 49,
                     columnNumber: 21
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -41310,120 +41422,185 @@ const Cart = ()=>{
                             children: "SEE RESTAURANTS NEAR YOU"
                         }, void 0, false, {
                             fileName: "src/components/Cart.js",
-                            lineNumber: 19,
+                            lineNumber: 52,
                             columnNumber: 29
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/Cart.js",
-                        lineNumber: 18,
+                        lineNumber: 51,
                         columnNumber: 25
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/Cart.js",
-                    lineNumber: 17,
+                    lineNumber: 50,
                     columnNumber: 21
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/Cart.js",
-            lineNumber: 13,
+            lineNumber: 46,
             columnNumber: 18
         }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "min-h-screen bg-gray-200",
+            className: "flex justify-center items-center min-h-screen bg-gray-200",
             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "grid grid-cols-2 gap-x-4 justify-center align-cente",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "w-4/5",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "border-solid border-2 border-black w-[500px] h-[100px]"
+                className: "w-[800px]",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "mt-2 bg-white",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            ref: containerRef,
+                            className: `flex justify-center py-5 mb-5 transition-shadow
+                                  ${isScrolled ? "shadow-[0px_4px_5px_-2px_rgba(0,0,0,0.1)]" : " "}`,
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                className: "ml-5 w-20 h-20",
+                                src: (0, _constants.LOGO_URL),
+                                alt: ""
+                            }, void 0, false, {
+                                fileName: "src/components/Cart.js",
+                                lineNumber: 65,
+                                columnNumber: 33
+                            }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/Cart.js",
-                            lineNumber: 28,
+                            lineNumber: 62,
                             columnNumber: 29
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "src/components/Cart.js",
-                        lineNumber: 27,
-                        columnNumber: 25
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "mt-10 mr-7 p-6 bg-white",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "flex justify-center items-center mb-7",
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                    className: "w-20 h-20",
-                                    src: (0, _constants.LOGO_URL),
-                                    alt: ""
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            ref: containerRef,
+                            className: `h-[500px] overflow-y-auto   
+                                  p-5 `,
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _itemListDefault.default), {
+                                    itemsCards: CartItems
                                 }, void 0, false, {
                                     fileName: "src/components/Cart.js",
-                                    lineNumber: 37,
+                                    lineNumber: 70,
                                     columnNumber: 33
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/components/Cart.js",
-                                lineNumber: 36,
-                                columnNumber: 29
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "border-b-5 border-black border-solid"
-                            }, void 0, false, {
-                                fileName: "src/components/Cart.js",
-                                lineNumber: 40,
-                                columnNumber: 29
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "h-[250px] overflow-y-auto ",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _itemListDefault.default), {
-                                        itemsCards: CartItems
-                                    }, void 0, false, {
-                                        fileName: "src/components/Cart.js",
-                                        lineNumber: 42,
-                                        columnNumber: 33
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "text-sm",
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "text-sm mt-10",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                             className: "font-bold",
-                                            children: "bill details"
+                                            children: "Bill Details"
                                         }, void 0, false, {
                                             fileName: "src/components/Cart.js",
-                                            lineNumber: 44,
+                                            lineNumber: 72,
+                                            columnNumber: 37
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            className: "flex justify-between text-sm mt-5 text-gray-400",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                    children: "Item total"
+                                                }, void 0, false, {
+                                                    fileName: "src/components/Cart.js",
+                                                    lineNumber: 74,
+                                                    columnNumber: 41
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                    children: [
+                                                        "\u20B9",
+                                                        itemTotal
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "src/components/Cart.js",
+                                                    lineNumber: 75,
+                                                    columnNumber: 41
+                                                }, undefined)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "src/components/Cart.js",
+                                            lineNumber: 73,
+                                            columnNumber: 37
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            className: "flex justify-between text-sm mt-5 text-gray-400",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                    children: "Dilevery Charges"
+                                                }, void 0, false, {
+                                                    fileName: "src/components/Cart.js",
+                                                    lineNumber: 78,
+                                                    columnNumber: 41
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                    children: "\u20B915"
+                                                }, void 0, false, {
+                                                    fileName: "src/components/Cart.js",
+                                                    lineNumber: 79,
+                                                    columnNumber: 41
+                                                }, undefined)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "src/components/Cart.js",
+                                            lineNumber: 77,
+                                            columnNumber: 37
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            className: "border-b-black border-2 border-solid mt-5"
+                                        }, void 0, false, {
+                                            fileName: "src/components/Cart.js",
+                                            lineNumber: 81,
+                                            columnNumber: 37
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            className: "flex justify-between font-bold mt-5  ",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                    children: "TO PAY"
+                                                }, void 0, false, {
+                                                    fileName: "src/components/Cart.js",
+                                                    lineNumber: 83,
+                                                    columnNumber: 41
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                    children: [
+                                                        "\u20B9",
+                                                        TotalPay
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "src/components/Cart.js",
+                                                    lineNumber: 84,
+                                                    columnNumber: 41
+                                                }, undefined)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "src/components/Cart.js",
+                                            lineNumber: 82,
                                             columnNumber: 37
                                         }, undefined)
-                                    }, void 0, false, {
-                                        fileName: "src/components/Cart.js",
-                                        lineNumber: 43,
-                                        columnNumber: 33
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/components/Cart.js",
-                                lineNumber: 41,
-                                columnNumber: 29
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/Cart.js",
-                        lineNumber: 35,
-                        columnNumber: 25
-                    }, undefined)
-                ]
-            }, void 0, true, {
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/components/Cart.js",
+                                    lineNumber: 71,
+                                    columnNumber: 33
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/Cart.js",
+                            lineNumber: 68,
+                            columnNumber: 29
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/Cart.js",
+                    lineNumber: 61,
+                    columnNumber: 25
+                }, undefined)
+            }, void 0, false, {
                 fileName: "src/components/Cart.js",
-                lineNumber: 26,
+                lineNumber: 59,
                 columnNumber: 21
             }, undefined)
         }, void 0, false, {
             fileName: "src/components/Cart.js",
-            lineNumber: 25,
+            lineNumber: 58,
             columnNumber: 18
         }, undefined)
     }, void 0, false);
 };
-_s(Cart, "uNvRgWKdr49mtgsuuilWRaMkBnw=", false, function() {
+_s(Cart, "VQvJGnUZ54/WuhJMGqlRnIRUj7c=", false, function() {
     return [
         (0, _reactRedux.useSelector)
     ];
@@ -41438,7 +41615,7 @@ $RefreshReg$(_c, "Cart");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-redux":"62sf7","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe","./ItemList":"kZjho","../utils/constants":"hB8jg"}],"kxbq9":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-redux":"62sf7","react-router-dom":"9xmpe","./ItemList":"kZjho","../utils/constants":"hB8jg","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kxbq9":[function(require,module,exports) {
 module.exports = require("535a57bc6058ab64")(require("ce65c7bc875b282e").getBundleURL("lPpKD") + "About.84db8bad.js" + "?" + Date.now()).catch((err)=>{
     delete module.bundle.cache[module.id];
     throw err;
