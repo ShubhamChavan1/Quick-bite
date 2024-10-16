@@ -2,7 +2,15 @@ import React from 'react'
 
 const ContactUS = () => {
   return (
-    <div>ContactUS</div>
+    <>
+      <div>helloo</div>
+      <h1>call us</h1>
+
+      <input type="text" placeholder='name'/>
+      <input type="text" placeholder='message' />
+
+      <button>submit</button>
+    </>
   )
 }
 

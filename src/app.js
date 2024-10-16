@@ -3,11 +3,9 @@ import ReactDOM from 'react-dom/client'
 import Body from './components/Body';
 import Header from './components/Header';
 import Error from './components/Error';
-import ContactUS from './components/ContactUS';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import Restaurant from './components/Restaurant';
-import userContext from './utils/userContext';
 import DarkContextProvider from './utils/DarkContextProvider';
 import { Provider } from 'react-redux';
 import appStore from './utils/appStore';
@@ -23,10 +21,8 @@ const AppLayout = () => {
         <div id="app">
             <Provider store={appStore}>
                 <DarkContextProvider >
-                    <userContext.Provider value={{ loggedInUser: "shubham chavan" }}>
-                        <Header />
-                        <Outlet />
-                    </userContext.Provider>
+                    <Header />
+                    <Outlet />
                 </DarkContextProvider>
             </Provider>
         </div>

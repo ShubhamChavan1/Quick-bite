@@ -142,14 +142,14 @@
       this[globalName] = mainExports;
     }
   }
-})({"1MCpU":[function(require,module,exports) {
+})({"kOvBU":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
 var HMR_USE_SSE = false;
-module.bundle.HMR_BUNDLE_ID = "b097ecc884db8bad";
+module.bundle.HMR_BUNDLE_ID = "d379019e952beee6";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, HMR_USE_SSE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -583,246 +583,326 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     });
 }
 
-},{}],"1xC6H":[function(require,module,exports) {
-var Refresh = require("6d18d6bd340e7473");
-var ErrorOverlay = require("74ad5ea14201648c");
-Refresh.injectIntoGlobalHook(window);
-window.$RefreshReg$ = function() {};
-window.$RefreshSig$ = function() {
-    return function(type) {
-        return type;
-    };
-};
-ErrorOverlay.setEditorHandler(function editorHandler(errorLocation) {
-    let file = `${errorLocation.fileName}:${errorLocation.lineNumber || 1}:${errorLocation.colNumber || 1}`;
-    fetch(`/__parcel_launch_editor?file=${encodeURIComponent(file)}`);
-});
-ErrorOverlay.startReportingRuntimeErrors({
-    onError: function() {}
-});
-window.addEventListener("parcelhmraccept", ()=>{
-    ErrorOverlay.dismissRuntimeErrors();
-});
-
-},{"6d18d6bd340e7473":"786KC","74ad5ea14201648c":"1dldy"}],"9R1Eu":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$5b98 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$5b98.prelude(module);
-
-try {
+},{}],"bcnxH":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _aboutClass = require("./AboutClass");
-var _aboutClassDefault = parcelHelpers.interopDefault(_aboutClass);
-const About = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutClassDefault.default), {}, void 0, false, {
-            fileName: "src/components/About.js",
-            lineNumber: 11,
-            columnNumber: 13
-        }, undefined)
-    }, void 0, false);
+parcelHelpers.export(exports, "toFormData", ()=>toFormData);
+var _fromJs = require("fetch-blob/from.js");
+var _esmMinJs = require("formdata-polyfill/esm.min.js");
+let s = 0;
+const S = {
+    START_BOUNDARY: s++,
+    HEADER_FIELD_START: s++,
+    HEADER_FIELD: s++,
+    HEADER_VALUE_START: s++,
+    HEADER_VALUE: s++,
+    HEADER_VALUE_ALMOST_DONE: s++,
+    HEADERS_ALMOST_DONE: s++,
+    PART_DATA_START: s++,
+    PART_DATA: s++,
+    END: s++
 };
-_c = About;
-exports.default = About;
-var _c;
-$RefreshReg$(_c, "About");
-
-  $parcel$ReactRefreshHelpers$5b98.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./AboutClass":"1tPuv","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"1tPuv":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$e6de = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$e6de.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _githubLogo = require("./GithubLogo");
-var _darkContextProvider = require("../utils/DarkContextProvider");
-var _shimmer = require("../components/Shimmer");
-var _shimmerDefault = parcelHelpers.interopDefault(_shimmer);
-class AboutClass extends (0, _reactDefault.default).Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            userInfo: "dummy"
+let f = 1;
+const F = {
+    PART_BOUNDARY: f,
+    LAST_BOUNDARY: f *= 2
+};
+const LF = 10;
+const CR = 13;
+const SPACE = 32;
+const HYPHEN = 45;
+const COLON = 58;
+const A = 97;
+const Z = 122;
+const lower = (c)=>c | 0x20;
+const noop = ()=>{};
+class MultipartParser {
+    /**
+	 * @param {string} boundary
+	 */ constructor(boundary){
+        this.index = 0;
+        this.flags = 0;
+        this.onHeaderEnd = noop;
+        this.onHeaderField = noop;
+        this.onHeadersEnd = noop;
+        this.onHeaderValue = noop;
+        this.onPartBegin = noop;
+        this.onPartData = noop;
+        this.onPartEnd = noop;
+        this.boundaryChars = {};
+        boundary = "\r\n--" + boundary;
+        const ui8a = new Uint8Array(boundary.length);
+        for(let i = 0; i < boundary.length; i++){
+            ui8a[i] = boundary.charCodeAt(i);
+            this.boundaryChars[ui8a[i]] = true;
+        }
+        this.boundary = ui8a;
+        this.lookbehind = new Uint8Array(this.boundary.length + 8);
+        this.state = S.START_BOUNDARY;
+    }
+    /**
+	 * @param {Uint8Array} data
+	 */ write(data) {
+        let i = 0;
+        const length_ = data.length;
+        let previousIndex = this.index;
+        let { lookbehind, boundary, boundaryChars, index, state, flags } = this;
+        const boundaryLength = this.boundary.length;
+        const boundaryEnd = boundaryLength - 1;
+        const bufferLength = data.length;
+        let c;
+        let cl;
+        const mark = (name)=>{
+            this[name + "Mark"] = i;
         };
-    }
-    //commit phase in mounting
-    async componentDidMount() {
-        const data = await fetch("https://api.github.com/users/shubhamchavan1");
-        const json = await data.json();
-        // console.log(json)
-        this.setState({
-            userInfo: json
-        });
-    }
-    render() {
-        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _darkContextProvider.DarkContext).Consumer, {
-            children: ({ Theme })=>{
-                console.log(Theme);
-                if (this.state.userInfo === "dummy") return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
-                    fileName: "src/components/AboutClass.js",
-                    lineNumber: 29,
-                    columnNumber: 32
-                }, this);
-                return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "min-h-screen",
-                    style: {
-                        backgroundColor: Theme,
-                        color: Theme === "white" ? "black" : "white"
-                    },
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "  flex justify-center items-center ",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "flex flex-col relative justify-center items-center mt-5 border border-solid border-3 w-[350px] h-[500px] rounded-xl border-black cursor-pointer hover:bg-slate-200 ",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: "w-[150px] h-[150px] mt-3 absolute top-3 flex justify-center items-center rounded-full",
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                        className: "rounded-full",
-                                        src: this.state.userInfo.avatar_url
-                                    }, void 0, false, {
-                                        fileName: "src/components/AboutClass.js",
-                                        lineNumber: 40,
-                                        columnNumber: 41
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "src/components/AboutClass.js",
-                                    lineNumber: 39,
-                                    columnNumber: 37
-                                }, this),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: " mb-[25px]  text-center",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                                            className: "font-bold text-xl",
-                                            children: this.state.userInfo.name
-                                        }, void 0, false, {
-                                            fileName: "src/components/AboutClass.js",
-                                            lineNumber: 43,
-                                            columnNumber: 41
-                                        }, this),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h6", {
-                                            children: "MERN Stack Developer"
-                                        }, void 0, false, {
-                                            fileName: "src/components/AboutClass.js",
-                                            lineNumber: 44,
-                                            columnNumber: 41
-                                        }, this),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                                            children: this.state.userInfo.bio
-                                        }, void 0, false, {
-                                            fileName: "src/components/AboutClass.js",
-                                            lineNumber: 45,
-                                            columnNumber: 41
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/components/AboutClass.js",
-                                    lineNumber: 42,
-                                    columnNumber: 37
-                                }, this),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                        href: "https://github.com/ShubhamChavan1",
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _githubLogo.GitHubLogo), {}, void 0, false, {
-                                            fileName: "src/components/AboutClass.js",
-                                            lineNumber: 48,
-                                            columnNumber: 85
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "src/components/AboutClass.js",
-                                        lineNumber: 48,
-                                        columnNumber: 41
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "src/components/AboutClass.js",
-                                    lineNumber: 47,
-                                    columnNumber: 37
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/AboutClass.js",
-                            lineNumber: 38,
-                            columnNumber: 33
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "src/components/AboutClass.js",
-                        lineNumber: 37,
-                        columnNumber: 29
-                    }, this)
-                }, void 0, false, {
-                    fileName: "src/components/AboutClass.js",
-                    lineNumber: 33,
-                    columnNumber: 25
-                }, this);
+        const clear = (name)=>{
+            delete this[name + "Mark"];
+        };
+        const callback = (callbackSymbol, start, end, ui8a)=>{
+            if (start === undefined || start !== end) this[callbackSymbol](ui8a && ui8a.subarray(start, end));
+        };
+        const dataCallback = (name, clear)=>{
+            const markSymbol = name + "Mark";
+            if (!(markSymbol in this)) return;
+            if (clear) {
+                callback(name, this[markSymbol], i, data);
+                delete this[markSymbol];
+            } else {
+                callback(name, this[markSymbol], data.length, data);
+                this[markSymbol] = 0;
             }
-        }, void 0, false, {
-            fileName: "src/components/AboutClass.js",
-            lineNumber: 25,
-            columnNumber: 13
-        }, this);
+        };
+        for(i = 0; i < length_; i++){
+            c = data[i];
+            switch(state){
+                case S.START_BOUNDARY:
+                    if (index === boundary.length - 2) {
+                        if (c === HYPHEN) flags |= F.LAST_BOUNDARY;
+                        else if (c !== CR) return;
+                        index++;
+                        break;
+                    } else if (index - 1 === boundary.length - 2) {
+                        if (flags & F.LAST_BOUNDARY && c === HYPHEN) {
+                            state = S.END;
+                            flags = 0;
+                        } else if (!(flags & F.LAST_BOUNDARY) && c === LF) {
+                            index = 0;
+                            callback("onPartBegin");
+                            state = S.HEADER_FIELD_START;
+                        } else return;
+                        break;
+                    }
+                    if (c !== boundary[index + 2]) index = -2;
+                    if (c === boundary[index + 2]) index++;
+                    break;
+                case S.HEADER_FIELD_START:
+                    state = S.HEADER_FIELD;
+                    mark("onHeaderField");
+                    index = 0;
+                // falls through
+                case S.HEADER_FIELD:
+                    if (c === CR) {
+                        clear("onHeaderField");
+                        state = S.HEADERS_ALMOST_DONE;
+                        break;
+                    }
+                    index++;
+                    if (c === HYPHEN) break;
+                    if (c === COLON) {
+                        if (index === 1) // empty header field
+                        return;
+                        dataCallback("onHeaderField", true);
+                        state = S.HEADER_VALUE_START;
+                        break;
+                    }
+                    cl = lower(c);
+                    if (cl < A || cl > Z) return;
+                    break;
+                case S.HEADER_VALUE_START:
+                    if (c === SPACE) break;
+                    mark("onHeaderValue");
+                    state = S.HEADER_VALUE;
+                // falls through
+                case S.HEADER_VALUE:
+                    if (c === CR) {
+                        dataCallback("onHeaderValue", true);
+                        callback("onHeaderEnd");
+                        state = S.HEADER_VALUE_ALMOST_DONE;
+                    }
+                    break;
+                case S.HEADER_VALUE_ALMOST_DONE:
+                    if (c !== LF) return;
+                    state = S.HEADER_FIELD_START;
+                    break;
+                case S.HEADERS_ALMOST_DONE:
+                    if (c !== LF) return;
+                    callback("onHeadersEnd");
+                    state = S.PART_DATA_START;
+                    break;
+                case S.PART_DATA_START:
+                    state = S.PART_DATA;
+                    mark("onPartData");
+                // falls through
+                case S.PART_DATA:
+                    previousIndex = index;
+                    if (index === 0) {
+                        // boyer-moore derrived algorithm to safely skip non-boundary data
+                        i += boundaryEnd;
+                        while(i < bufferLength && !(data[i] in boundaryChars))i += boundaryLength;
+                        i -= boundaryEnd;
+                        c = data[i];
+                    }
+                    if (index < boundary.length) {
+                        if (boundary[index] === c) {
+                            if (index === 0) dataCallback("onPartData", true);
+                            index++;
+                        } else index = 0;
+                    } else if (index === boundary.length) {
+                        index++;
+                        if (c === CR) // CR = part boundary
+                        flags |= F.PART_BOUNDARY;
+                        else if (c === HYPHEN) // HYPHEN = end boundary
+                        flags |= F.LAST_BOUNDARY;
+                        else index = 0;
+                    } else if (index - 1 === boundary.length) {
+                        if (flags & F.PART_BOUNDARY) {
+                            index = 0;
+                            if (c === LF) {
+                                // unset the PART_BOUNDARY flag
+                                flags &= ~F.PART_BOUNDARY;
+                                callback("onPartEnd");
+                                callback("onPartBegin");
+                                state = S.HEADER_FIELD_START;
+                                break;
+                            }
+                        } else if (flags & F.LAST_BOUNDARY) {
+                            if (c === HYPHEN) {
+                                callback("onPartEnd");
+                                state = S.END;
+                                flags = 0;
+                            } else index = 0;
+                        } else index = 0;
+                    }
+                    if (index > 0) // when matching a possible boundary, keep a lookbehind reference
+                    // in case it turns out to be a false lead
+                    lookbehind[index - 1] = c;
+                    else if (previousIndex > 0) {
+                        // if our boundary turned out to be rubbish, the captured lookbehind
+                        // belongs to partData
+                        const _lookbehind = new Uint8Array(lookbehind.buffer, lookbehind.byteOffset, lookbehind.byteLength);
+                        callback("onPartData", 0, previousIndex, _lookbehind);
+                        previousIndex = 0;
+                        mark("onPartData");
+                        // reconsider the current character even so it interrupted the sequence
+                        // it could be the beginning of a new sequence
+                        i--;
+                    }
+                    break;
+                case S.END:
+                    break;
+                default:
+                    throw new Error(`Unexpected state entered: ${state}`);
+            }
+        }
+        dataCallback("onHeaderField");
+        dataCallback("onHeaderValue");
+        dataCallback("onPartData");
+        // Update properties for the next call
+        this.index = index;
+        this.state = state;
+        this.flags = flags;
+    }
+    end() {
+        if (this.state === S.HEADER_FIELD_START && this.index === 0 || this.state === S.PART_DATA && this.index === this.boundary.length) this.onPartEnd();
+        else if (this.state !== S.END) throw new Error("MultipartParser.end(): stream ended unexpectedly");
     }
 }
-exports.default = AboutClass;
-
-  $parcel$ReactRefreshHelpers$e6de.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
+function _fileName(headerValue) {
+    // matches either a quoted-string or a token (RFC 2616 section 19.5.1)
+    const m = headerValue.match(/\bfilename=("(.*?)"|([^()<>@,;:\\"/[\]?={}\s\t]+))($|;\s)/i);
+    if (!m) return;
+    const match = m[2] || m[3] || "";
+    let filename = match.slice(match.lastIndexOf("\\") + 1);
+    filename = filename.replace(/%22/g, '"');
+    filename = filename.replace(/&#(\d{4});/g, (m, code)=>{
+        return String.fromCharCode(code);
+    });
+    return filename;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./GithubLogo":"3N4oz","../utils/DarkContextProvider":"9W1uk","../components/Shimmer":"g6ZGj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3N4oz":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$6c3b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$6c3b.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "GitHubLogo", ()=>GitHubLogo);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const GitHubLogo = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
-        xmlns: "http://www.w3.org/2000/svg",
-        viewBox: "0 0 50 50",
-        width: "50px",
-        height: "50px",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
-            d: "M17.791,46.836C18.502,46.53,19,45.823,19,45v-5.4c0-0.197,0.016-0.402,0.041-0.61C19.027,38.994,19.014,38.997,19,39 c0,0-3,0-3.6,0c-1.5,0-2.8-0.6-3.4-1.8c-0.7-1.3-1-3.5-2.8-4.7C8.9,32.3,9.1,32,9.7,32c0.6,0.1,1.9,0.9,2.7,2c0.9,1.1,1.8,2,3.4,2 c2.487,0,3.82-0.125,4.622-0.555C21.356,34.056,22.649,33,24,33v-0.025c-5.668-0.182-9.289-2.066-10.975-4.975 c-3.665,0.042-6.856,0.405-8.677,0.707c-0.058-0.327-0.108-0.656-0.151-0.987c1.797-0.296,4.843-0.647,8.345-0.714 c-0.112-0.276-0.209-0.559-0.291-0.849c-3.511-0.178-6.541-0.039-8.187,0.097c-0.02-0.332-0.047-0.663-0.051-0.999 c1.649-0.135,4.597-0.27,8.018-0.111c-0.079-0.5-0.13-1.011-0.13-1.543c0-1.7,0.6-3.5,1.7-5c-0.5-1.7-1.2-5.3,0.2-6.6 c2.7,0,4.6,1.3,5.5,2.1C21,13.4,22.9,13,25,13s4,0.4,5.6,1.1c0.9-0.8,2.8-2.1,5.5-2.1c1.5,1.4,0.7,5,0.2,6.6c1.1,1.5,1.7,3.2,1.6,5 c0,0.484-0.045,0.951-0.11,1.409c3.499-0.172,6.527-0.034,8.204,0.102c-0.002,0.337-0.033,0.666-0.051,0.999 c-1.671-0.138-4.775-0.28-8.359-0.089c-0.089,0.336-0.197,0.663-0.325,0.98c3.546,0.046,6.665,0.389,8.548,0.689 c-0.043,0.332-0.093,0.661-0.151,0.987c-1.912-0.306-5.171-0.664-8.879-0.682C35.112,30.873,31.557,32.75,26,32.969V33 c2.6,0,5,3.9,5,6.6V45c0,0.823,0.498,1.53,1.209,1.836C41.37,43.804,48,35.164,48,25C48,12.318,37.683,2,25,2S2,12.318,2,25 C2,35.164,8.63,43.804,17.791,46.836z"
-        }, void 0, false, {
-            fileName: "src/components/GithubLogo.js",
-            lineNumber: 4,
-            columnNumber: 13
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/components/GithubLogo.js",
-        lineNumber: 3,
-        columnNumber: 9
-    }, undefined);
-};
-_c = GitHubLogo;
-var _c;
-$RefreshReg$(_c, "GitHubLogo");
-
-  $parcel$ReactRefreshHelpers$6c3b.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
+async function toFormData(Body, ct) {
+    if (!/multipart/i.test(ct)) throw new TypeError("Failed to fetch");
+    const m = ct.match(/boundary=(?:"([^"]+)"|([^;]+))/i);
+    if (!m) throw new TypeError("no or bad content-type header, no multipart boundary");
+    const parser = new MultipartParser(m[1] || m[2]);
+    let headerField;
+    let headerValue;
+    let entryValue;
+    let entryName;
+    let contentType;
+    let filename;
+    const entryChunks = [];
+    const formData = new (0, _esmMinJs.FormData)();
+    const onPartData = (ui8a)=>{
+        entryValue += decoder.decode(ui8a, {
+            stream: true
+        });
+    };
+    const appendToFile = (ui8a)=>{
+        entryChunks.push(ui8a);
+    };
+    const appendFileToFormData = ()=>{
+        const file = new (0, _fromJs.File)(entryChunks, filename, {
+            type: contentType
+        });
+        formData.append(entryName, file);
+    };
+    const appendEntryToFormData = ()=>{
+        formData.append(entryName, entryValue);
+    };
+    const decoder = new TextDecoder("utf-8");
+    decoder.decode();
+    parser.onPartBegin = function() {
+        parser.onPartData = onPartData;
+        parser.onPartEnd = appendEntryToFormData;
+        headerField = "";
+        headerValue = "";
+        entryValue = "";
+        entryName = "";
+        contentType = "";
+        filename = null;
+        entryChunks.length = 0;
+    };
+    parser.onHeaderField = function(ui8a) {
+        headerField += decoder.decode(ui8a, {
+            stream: true
+        });
+    };
+    parser.onHeaderValue = function(ui8a) {
+        headerValue += decoder.decode(ui8a, {
+            stream: true
+        });
+    };
+    parser.onHeaderEnd = function() {
+        headerValue += decoder.decode();
+        headerField = headerField.toLowerCase();
+        if (headerField === "content-disposition") {
+            // matches either a quoted-string or a token (RFC 2616 section 19.5.1)
+            const m = headerValue.match(/\bname=("([^"]*)"|([^()<>@,;:\\"/[\]?={}\s\t]+))/i);
+            if (m) entryName = m[2] || m[3] || "";
+            filename = _fileName(headerValue);
+            if (filename) {
+                parser.onPartData = appendToFile;
+                parser.onPartEnd = appendFileToFormData;
+            }
+        } else if (headerField === "content-type") contentType = headerValue;
+        headerValue = "";
+        headerField = "";
+    };
+    for await (const chunk of Body)parser.write(chunk);
+    parser.end();
+    return formData;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1MCpU","1xC6H"], null, "parcelRequirec643")
 
-//# sourceMappingURL=About.84db8bad.js.map
+},{"fetch-blob/from.js":"6EPv3","formdata-polyfill/esm.min.js":"fquEL","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["kOvBU"], null, "parcelRequirec643")
+
+//# sourceMappingURL=multipart-parser.952beee6.js.map

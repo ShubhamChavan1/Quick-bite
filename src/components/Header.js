@@ -20,7 +20,7 @@ const Header = () => {
     const CartItems = useSelector((store) => store.cart.items)
 
     const { toggleTheme, Theme, darkState } = useContext(DarkContext);
-
+    // console.log(toggleTheme, darkState, Theme)
     return (
         <nav className="flex justify-between h-[100px] shadow-lg" style={
             {

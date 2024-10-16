@@ -1,8 +1,8 @@
 import React from "react"
-import userContext from "../utils/userContext";
 import { GitHubLogo } from "./GithubLogo";
 import { DarkContext } from "../utils/DarkContextProvider";
 import Shimmer from "../components/Shimmer";
+
 class AboutClass extends React.Component {
 
     constructor(props) {
@@ -14,9 +14,9 @@ class AboutClass extends React.Component {
 
     //commit phase in mounting
     async componentDidMount() {
-        const data = await fetch("https://api.github.com/users/shubhamchavan1");
+        const data = await fetch("https://api.github.com/users/shubhamchavan1")
         const json = await data.json();
-        console.log(json)
+        // console.log(json)
         this.setState({ userInfo: json })
     }
 
@@ -24,7 +24,7 @@ class AboutClass extends React.Component {
         return (
             <DarkContext.Consumer>
                 {({ Theme }) => {
-
+                    console.log(Theme)
                     if (this.state.userInfo === "dummy") {
                         return <Shimmer />
                     }
@@ -41,7 +41,7 @@ class AboutClass extends React.Component {
                                     </div>
                                     <div className=" mb-[25px]  text-center">
                                         <h1 className="font-bold text-xl">{this.state.userInfo.name}</h1>
-                                        <h6>Front End Developer</h6>
+                                        <h6>MERN Stack Developer</h6>
                                         <h4>{this.state.userInfo.bio}</h4>
                                     </div>
                                     <div>

@@ -1,6 +1,5 @@
 import { createContext, useState } from "react";
 
-
 export const DarkContext = createContext();
 
 const DarkContextProvider = ({ children }) => {
@@ -10,8 +9,8 @@ const DarkContextProvider = ({ children }) => {
     const [darkState, setdarkSTATE] = useState('Off')
 
     const toggleTheme = () => {
-        setTheme((prevTheme) => prevTheme === 'white' ? '#1d2a35' : 'white')
-        setdarkSTATE((prevState) => prevState === 'Off' ? 'On' : 'Off')
+        setTheme((Theme) => Theme === 'white' ? '#1d2a35' : 'white')
+        setdarkSTATE((State) => State === 'Off' ? 'On' : 'Off')
     }
 
     return (
