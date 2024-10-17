@@ -1,13 +1,13 @@
 import { render, screen } from "@testing-library/react"
 import RES_CARD, { withDiscountTag } from "../RES_CARD"
-import { MOCK_DATA } from "../Mocks/ResDataMock"
+import restaurant from "../Mocks/ResDataMock.json"
 import "@testing-library/jest-dom";
 
-describe("TESTing RES_CARD COMPONENT", () => {
+describe("Testing RES_CARD COMPONENT", () => {
 
     it("should render RES_CARD component", () => {
 
-        render(<RES_CARD res_data={MOCK_DATA} />)
+        render(<RES_CARD res_data={restaurant} />)
     })
 
 
@@ -15,12 +15,12 @@ describe("TESTing RES_CARD COMPONENT", () => {
 
         const ResPromoted = withDiscountTag(RES_CARD);
 
-        render(<ResPromoted res_data={MOCK_DATA} />)
+        render(<ResPromoted res_data={restaurant} />)
 
-        const header = screen.getByText("60% OFF")
+        const header = screen.getByText("₹100 OFF")
 
         expect(header).toBeInTheDocument();
     })
 
-    
+
 })

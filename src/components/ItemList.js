@@ -39,7 +39,7 @@ const ItemList = ({ itemsCards }) => {
 
 
                     return (
-                        <div key={itemId} className="p-3 mb-3 flex justify-between  text-left border-black border-solid border-b-2" >
+                        <div data-testid="food-items" key={itemId} className="p-3 mb-3 flex justify-between  text-left border-black border-solid border-b-2" >
                             <div className="w-9/12">
                                 <span className="flex items-center" >
                                     {vegClassifier === "VEG" ?

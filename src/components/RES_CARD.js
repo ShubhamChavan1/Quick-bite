@@ -9,7 +9,7 @@ const RES_CARD = (props) => {
 
     return (
 
-        <div className="flex justify-center items-center h-full">
+        <div data-testid="ResCards" className="flex justify-center items-center h-full">
             <div className="w-[250px] h-[500px] rounded-md border border-solid border-black hover:bg-gray-300 ">
                 <div className="relative">
                     <img className="max-w-full h-80 object-cover rounded-t-md" src={CDN_URL + cloudinaryImageId} />
@@ -35,7 +35,7 @@ component */
 export const withDiscountTag = (RES_CARD) => {
     return (props) => {
         const { res_data } = props
-        const { header } = res_data?.info.aggregatedDiscountInfoV3
+        const { header } = res_data?.info?.aggregatedDiscountInfoV3
         const { avgRating } = res_data.info
 
         return (

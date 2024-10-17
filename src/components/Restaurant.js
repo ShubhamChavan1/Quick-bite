@@ -3,14 +3,14 @@ import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategories from "./RestuarantCategories";
-import { useContext, useState } from "react";
-import { DarkContext } from "../utils/DarkContextProvider";
+import {  useState } from "react";
+
 
 //for Restaurant Menu card
 const Restaurant = () => {
 
 
-    const { Theme } = useContext(DarkContext)
+
 
     const [showIndex, setshowIndex] = useState(null)
 
@@ -24,8 +24,8 @@ const Restaurant = () => {
         return <Shimmer />
     }
 
-    const { avgRating, totalRatingsString, costForTwoMessage, cuisines, areaName ,sla} = ResInfo?.cards[2].card.card.info
-    console.log(ResInfo)
+    const { avgRating, totalRatingsString, costForTwoMessage, cuisines, areaName, sla } = ResInfo?.cards[2].card.card.info
+    // console.log(ResInfo)
     const { text } = ResInfo?.cards?.[0]?.card?.card
 
 

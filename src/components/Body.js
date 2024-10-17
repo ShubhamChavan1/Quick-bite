@@ -33,15 +33,17 @@ const Body = () => {
             backgroundColor: Theme,
             color: Theme === 'white' ? 'black' : 'white'
         }}>
-            <div className="flex  items-center justify-between">
+            <div className="flex  items-center ">
                 <div className='flex items-center'>
-                    <input className='m-5 outline-orange-400 border border-soild border-black' type="text" value={search} onChange={handleOnChange} />
-                    <button className="px-4 py-3  rounded-lg bg-green-600" onClick={handleOnclick} >search</button>
+                    <input data-testid="search input-box" className='m-5 p-2 outline-orange-400 border border-soild font-Swiggy  border-black'
+                        placeholder='Search for Restaurants' type="text" value={search} onChange={handleOnChange} />
+                    <button className="px-4 py-3  rounded-lg bg-green-600 font-Swiggy" onClick={handleOnclick} >search</button>
+
+                    <button className="p-3 rounded-lg mx-4 bg-gray-400 font-Swiggy" onClick={filterTopRES}>
+                        Show Top restaurant
+                    </button>
                 </div>
 
-                <button className="p-3 rounded-lg mr-4 bg-gray-400" onClick={filterTopRES}>
-                    Show Top restaurant
-                </button>
 
             </div>
             <div className='flex justify-center'>

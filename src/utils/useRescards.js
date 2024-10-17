@@ -26,6 +26,7 @@ const useRescards = () => {
     const [search, setSEARCH] = useState(" ")
 
     const handleOnChange = (event) => {
+        // console.log(event.currentTarget)
         setSEARCH(event.target.value);
     }
 
@@ -34,7 +35,7 @@ const useRescards = () => {
         const searchRESULT = listofRESTAUARANT.filter((res) => {
             return res.info?.name.toLowerCase().includes(search.toLowerCase());
         })
-        setfilterRESTAURANT(searchRESULT);
+        setfilterRESTAURANT(searchRESULT)
     }
 
     //top res

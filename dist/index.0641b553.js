@@ -3099,7 +3099,7 @@ $RefreshReg$(_c1, "AppLayout");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./components/Body":"8yaV8","./components/Header":"hsJbF","./components/Error":"kvula","react-router-dom":"9xmpe","./components/Restaurant":"kZInI","./utils/DarkContextProvider":"9W1uk","react-redux":"62sf7","./utils/appStore":"6A5Ux","./components/Shimmer":"g6ZGj","fda898b62b95e223":"kxbq9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/Cart":"h8J3U"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./components/Body":"8yaV8","./components/Header":"hsJbF","./components/Error":"kvula","react-router-dom":"9xmpe","./components/Restaurant":"kZInI","./utils/DarkContextProvider":"9W1uk","react-redux":"62sf7","./utils/appStore":"6A5Ux","./components/Cart":"h8J3U","./components/Shimmer":"g6ZGj","fda898b62b95e223":"kxbq9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27391,47 +27391,47 @@ const Body = ()=>{
         },
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex  items-center justify-between",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "flex items-center",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                className: "m-5 outline-orange-400 border border-soild border-black",
-                                type: "text",
-                                value: search,
-                                onChange: handleOnChange
-                            }, void 0, false, {
-                                fileName: "src/components/Body.js",
-                                lineNumber: 38,
-                                columnNumber: 21
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                className: "px-4 py-3  rounded-lg bg-green-600",
-                                onClick: handleOnclick,
-                                children: "search"
-                            }, void 0, false, {
-                                fileName: "src/components/Body.js",
-                                lineNumber: 39,
-                                columnNumber: 21
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/Body.js",
-                        lineNumber: 37,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        className: "p-3 rounded-lg mr-4 bg-gray-400",
-                        onClick: filterTopRES,
-                        children: "Show Top restaurant"
-                    }, void 0, false, {
-                        fileName: "src/components/Body.js",
-                        lineNumber: 42,
-                        columnNumber: 17
-                    }, undefined)
-                ]
-            }, void 0, true, {
+                className: "flex  items-center ",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "flex items-center",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                            "data-testid": "search input-box",
+                            className: "m-5 p-2 outline-orange-400 border border-soild font-Swiggy  border-black",
+                            placeholder: "Search for Restaurants",
+                            type: "text",
+                            value: search,
+                            onChange: handleOnChange
+                        }, void 0, false, {
+                            fileName: "src/components/Body.js",
+                            lineNumber: 38,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            className: "px-4 py-3  rounded-lg bg-green-600 font-Swiggy",
+                            onClick: handleOnclick,
+                            children: "search"
+                        }, void 0, false, {
+                            fileName: "src/components/Body.js",
+                            lineNumber: 40,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            className: "p-3 rounded-lg mx-4 bg-gray-400 font-Swiggy",
+                            onClick: filterTopRES,
+                            children: "Show Top restaurant"
+                        }, void 0, false, {
+                            fileName: "src/components/Body.js",
+                            lineNumber: 42,
+                            columnNumber: 21
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/Body.js",
+                    lineNumber: 37,
+                    columnNumber: 17
+                }, undefined)
+            }, void 0, false, {
                 fileName: "src/components/Body.js",
                 lineNumber: 36,
                 columnNumber: 13
@@ -27446,28 +27446,28 @@ const Body = ()=>{
                                 res_data: restaurant
                             }, void 0, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 55,
+                                lineNumber: 57,
                                 columnNumber: 37
                             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resCardDefault.default), {
                                 res_data: restaurant
                             }, void 0, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 55,
+                                lineNumber: 57,
                                 columnNumber: 77
                             }, undefined)
                         }, restaurant.info.id, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 50,
+                            lineNumber: 52,
                             columnNumber: 25
                         }, undefined))
                 }, void 0, false, {
                     fileName: "src/components/Body.js",
-                    lineNumber: 48,
+                    lineNumber: 50,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 47,
+                lineNumber: 49,
                 columnNumber: 13
             }, undefined)
         ]
@@ -27507,9 +27507,10 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _constants = require("../utils/constants");
 const RES_CARD = (props)=>{
     const { res_data } = props;
-    console.log(res_data);
+    // console.log(res_data)
     const { name, locality, cuisines, cloudinaryImageId, sla } = res_data?.info;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        "data-testid": "ResCards",
         className: "flex justify-center items-center h-full",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: "w-[250px] h-[500px] rounded-md border border-solid border-black hover:bg-gray-300 ",
@@ -27587,7 +27588,7 @@ _c = RES_CARD;
 const withDiscountTag = (RES_CARD)=>{
     return (props)=>{
         const { res_data } = props;
-        const { header } = res_data?.info.aggregatedDiscountInfoV3;
+        const { header } = res_data?.info?.aggregatedDiscountInfoV3;
         const { avgRating } = res_data.info;
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RES_CARD, {
@@ -35360,6 +35361,7 @@ const useRescards = ()=>{
     //SearchResult
     const [search, setSEARCH] = (0, _react.useState)(" ");
     const handleOnChange = (event)=>{
+        // console.log(event.currentTarget)
         setSEARCH(event.target.value);
     };
     const handleOnclick = ()=>{
@@ -36799,12 +36801,10 @@ var _useRestaurantMenuDefault = parcelHelpers.interopDefault(_useRestaurantMenu)
 var _restuarantCategories = require("./RestuarantCategories");
 var _restuarantCategoriesDefault = parcelHelpers.interopDefault(_restuarantCategories);
 var _react = require("react");
-var _darkContextProvider = require("../utils/DarkContextProvider");
 var _s = $RefreshSig$();
 //for Restaurant Menu card
 const Restaurant = ()=>{
     _s();
-    const { Theme } = (0, _react.useContext)((0, _darkContextProvider.DarkContext));
     const [showIndex, setshowIndex] = (0, _react.useState)(null);
     /* extracating resId from a rescard to display its menu*/ const { resId } = (0, _reactRouterDom.useParams)();
     //Restaurant Menu info
@@ -36815,7 +36815,7 @@ const Restaurant = ()=>{
         columnNumber: 16
     }, undefined);
     const { avgRating, totalRatingsString, costForTwoMessage, cuisines, areaName, sla } = ResInfo?.cards[2].card.card.info;
-    console.log(ResInfo);
+    // console.log(ResInfo)
     const { text } = ResInfo?.cards?.[0]?.card?.card;
     const Categories = ResInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c)=>c.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
     // console.log(Categories)
@@ -36993,7 +36993,7 @@ const Restaurant = ()=>{
         columnNumber: 9
     }, undefined);
 };
-_s(Restaurant, "GARf5sKo/092Oh4P+OXKnSHp4kU=", false, function() {
+_s(Restaurant, "QD/lY3+9ptM9WL84CYUDN8/XqqA=", false, function() {
     return [
         (0, _reactRouterDom.useParams),
         (0, _useRestaurantMenuDefault.default)
@@ -37009,7 +37009,7 @@ $RefreshReg$(_c, "Restaurant");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./Shimmer":"g6ZGj","react-router-dom":"9xmpe","../utils/useRestaurantMenu":"fMOkH","./RestuarantCategories":"7TmOU","react":"21dqq","../utils/DarkContextProvider":"9W1uk","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fMOkH":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./Shimmer":"g6ZGj","react-router-dom":"9xmpe","../utils/useRestaurantMenu":"fMOkH","./RestuarantCategories":"7TmOU","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fMOkH":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$253c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -37152,6 +37152,7 @@ const ItemList = ({ itemsCards })=>{
             const itemQuantity = getItemCount(itemId);
             const { vegClassifier } = item.card.info.itemAttribute;
             return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                "data-testid": "food-items",
                 className: "p-3 mb-3 flex justify-between  text-left border-black border-solid border-b-2",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -41319,110 +41320,7 @@ const appStore = (0, _toolkit.configureStore)({
 });
 exports.default = appStore;
 
-},{"@reduxjs/toolkit":"fuua8","./CartSlice":"jOiMX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kxbq9":[function(require,module,exports) {
-module.exports = require("535a57bc6058ab64")(require("ce65c7bc875b282e").getBundleURL("lPpKD") + "About.84db8bad.js" + "?" + Date.now()).catch((err)=>{
-    delete module.bundle.cache[module.id];
-    throw err;
-}).then(()=>module.bundle.root("9R1Eu"));
-
-},{"535a57bc6058ab64":"61B45","ce65c7bc875b282e":"lgJ39"}],"61B45":[function(require,module,exports) {
-"use strict";
-var cacheLoader = require("ca2a84f7fa4a3bb0");
-module.exports = cacheLoader(function(bundle) {
-    return new Promise(function(resolve, reject) {
-        // Don't insert the same script twice (e.g. if it was already in the HTML)
-        var existingScripts = document.getElementsByTagName("script");
-        if ([].concat(existingScripts).some(function isCurrentBundle(script) {
-            return script.src === bundle;
-        })) {
-            resolve();
-            return;
-        }
-        var preloadLink = document.createElement("link");
-        preloadLink.href = bundle;
-        preloadLink.rel = "preload";
-        preloadLink.as = "script";
-        document.head.appendChild(preloadLink);
-        var script = document.createElement("script");
-        script.async = true;
-        script.type = "text/javascript";
-        script.src = bundle;
-        script.onerror = function(e) {
-            var error = new TypeError("Failed to fetch dynamically imported module: ".concat(bundle, ". Error: ").concat(e.message));
-            script.onerror = script.onload = null;
-            script.remove();
-            reject(error);
-        };
-        script.onload = function() {
-            script.onerror = script.onload = null;
-            resolve();
-        };
-        document.getElementsByTagName("head")[0].appendChild(script);
-    });
-});
-
-},{"ca2a84f7fa4a3bb0":"j49pS"}],"j49pS":[function(require,module,exports) {
-"use strict";
-var cachedBundles = {};
-var cachedPreloads = {};
-var cachedPrefetches = {};
-function getCache(type) {
-    switch(type){
-        case "preload":
-            return cachedPreloads;
-        case "prefetch":
-            return cachedPrefetches;
-        default:
-            return cachedBundles;
-    }
-}
-module.exports = function(loader, type) {
-    return function(bundle) {
-        var cache = getCache(type);
-        if (cache[bundle]) return cache[bundle];
-        return cache[bundle] = loader.apply(null, arguments).catch(function(e) {
-            delete cache[bundle];
-            throw e;
-        });
-    };
-};
-
-},{}],"lgJ39":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return "/";
-}
-function getBaseURL(url) {
-    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-}
-// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error("Origin not found");
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"h8J3U":[function(require,module,exports) {
+},{"@reduxjs/toolkit":"fuua8","./CartSlice":"jOiMX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"h8J3U":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ad24 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41692,6 +41590,109 @@ $RefreshReg$(_c, "Cart");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-redux":"62sf7","react-router-dom":"9xmpe","./ItemList":"kZjho","../utils/constants":"hB8jg","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["gbXMy","1xC6H","bNKaB"], "bNKaB", "parcelRequirec643")
+},{"react/jsx-dev-runtime":"iTorj","react-redux":"62sf7","react-router-dom":"9xmpe","./ItemList":"kZjho","../utils/constants":"hB8jg","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kxbq9":[function(require,module,exports) {
+module.exports = require("535a57bc6058ab64")(require("ce65c7bc875b282e").getBundleURL("lPpKD") + "About.84db8bad.js" + "?" + Date.now()).catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root("9R1Eu"));
+
+},{"535a57bc6058ab64":"61B45","ce65c7bc875b282e":"lgJ39"}],"61B45":[function(require,module,exports) {
+"use strict";
+var cacheLoader = require("ca2a84f7fa4a3bb0");
+module.exports = cacheLoader(function(bundle) {
+    return new Promise(function(resolve, reject) {
+        // Don't insert the same script twice (e.g. if it was already in the HTML)
+        var existingScripts = document.getElementsByTagName("script");
+        if ([].concat(existingScripts).some(function isCurrentBundle(script) {
+            return script.src === bundle;
+        })) {
+            resolve();
+            return;
+        }
+        var preloadLink = document.createElement("link");
+        preloadLink.href = bundle;
+        preloadLink.rel = "preload";
+        preloadLink.as = "script";
+        document.head.appendChild(preloadLink);
+        var script = document.createElement("script");
+        script.async = true;
+        script.type = "text/javascript";
+        script.src = bundle;
+        script.onerror = function(e) {
+            var error = new TypeError("Failed to fetch dynamically imported module: ".concat(bundle, ". Error: ").concat(e.message));
+            script.onerror = script.onload = null;
+            script.remove();
+            reject(error);
+        };
+        script.onload = function() {
+            script.onerror = script.onload = null;
+            resolve();
+        };
+        document.getElementsByTagName("head")[0].appendChild(script);
+    });
+});
+
+},{"ca2a84f7fa4a3bb0":"j49pS"}],"j49pS":[function(require,module,exports) {
+"use strict";
+var cachedBundles = {};
+var cachedPreloads = {};
+var cachedPrefetches = {};
+function getCache(type) {
+    switch(type){
+        case "preload":
+            return cachedPreloads;
+        case "prefetch":
+            return cachedPrefetches;
+        default:
+            return cachedBundles;
+    }
+}
+module.exports = function(loader, type) {
+    return function(bundle) {
+        var cache = getCache(type);
+        if (cache[bundle]) return cache[bundle];
+        return cache[bundle] = loader.apply(null, arguments).catch(function(e) {
+            delete cache[bundle];
+            throw e;
+        });
+    };
+};
+
+},{}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+}
+// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}]},["gbXMy","1xC6H","bNKaB"], "bNKaB", "parcelRequirec643")
 
 //# sourceMappingURL=index.0641b553.js.map
