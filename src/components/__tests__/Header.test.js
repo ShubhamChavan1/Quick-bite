@@ -67,7 +67,32 @@ describe("unit testing for header component", () => {
 
     })
 
+    it("should toggle dark mode on in header", () => {
 
+        const dummyValue = {
+            Theme: "white",
+            darkState: "Off",
+            toggleTheme: jest.fn()
+        }
+
+        render(
+            <DarkContext.Provider value={dummyValue}>
+                <Provider store={appStore}>
+                    <BrowserRouter>
+                        <Header />
+                    </BrowserRouter>
+                </Provider>
+            </DarkContext.Provider>
+        )
+
+        const togglebtn = screen.getByRole("button", { name: "Dark Mode : Off" })
+
+        fireEvent.click(togglebtn)
+
+
+        expect(dummyValue.toggleTheme).toHaveBeenCalled();
+
+    })
 
 
 })
