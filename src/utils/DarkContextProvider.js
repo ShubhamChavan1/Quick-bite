@@ -9,7 +9,7 @@ const DarkContextProvider = ({ children }) => {
     const [darkState, setdarkSTATE] = useState('Off')
 
     const toggleTheme = () => {
-        setTheme((Theme) => Theme === 'white' ? '#1d2a35' : 'white')
+        setTheme((Theme) => Theme === 'white' ? 'gray' : 'white')
         setdarkSTATE((State) => State === 'Off' ? 'On' : 'Off')
     }
 

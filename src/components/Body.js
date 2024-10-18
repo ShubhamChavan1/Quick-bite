@@ -35,8 +35,8 @@ const Body = () => {
         }}>
             <div className="flex  items-center ">
                 <div className='flex items-center'>
-                    <input data-testid="search input-box" className='m-5 p-2 outline-orange-400 border border-soild font-Swiggy  border-black'
-                        placeholder='Search for Restaurants' type="text" value={search} onChange={handleOnChange} />
+                    <input data-testid="search input-box" placeholder="Search for Restaurants" className='m-5 p-2 outline-orange-400 border border-soild font-Swiggy  border-black'
+                        type="text" value={search} onChange={handleOnChange} />
                     <button className="px-4 py-3  rounded-lg bg-green-600 font-Swiggy" onClick={handleOnclick} >search</button>
 
                     <button className="p-3 rounded-lg mx-4 bg-gray-400 font-Swiggy" onClick={filterTopRES}>

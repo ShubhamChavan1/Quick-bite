@@ -2,7 +2,8 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import ItemList from "./ItemList";
 import { LOGO_URL } from "../utils/constants";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import { DarkContext } from "../utils/DarkContextProvider";
 
 const Cart = () => {
     const CartItems = useSelector((store) => store.cart.items)
@@ -38,19 +39,27 @@ const Cart = () => {
 
     }, [])
 
+    const { Theme } = useContext(DarkContext)
+
 
     return (
         <>
 
             {CartItems.length === 0 ?
-                (<div className="font-bold mt-14 flex flex-col justify-center items-center">
-                    <img className="w-[271px] h-[256px]" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0" alt="" />
-                    <span className="mt-5">Your Cart is Empty</span>
-                    <span className="font-normal text-gray-400">You can go to home page to view more restaurants</span>
-                    <div className="mt-5">
-                        <Link to="/">
-                            <button className="bg-orange-500 p-3 rounded-md text-white ">SEE RESTAURANTS NEAR YOU</button>
-                        </Link>
+                (<div className="min-h-screen" style={{
+                    backgroundColor: Theme === "white" ? "white" : "gray",
+                    color: Theme === "white" ? "gray" : "black"
+                }
+                }>
+                    <div className="font-bold flex flex-col justify-center items-center">
+                        <img className="mt-14 w-[271px] h-[256px]" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0" alt="" />
+                        <span className="mt-5">Your Cart is Empty</span>
+                        <span className="font-normal text-gray-400">You can go to home page to view more restaurants</span>
+                        <div className="mt-5">
+                            <Link to="/">
+                                <button className="bg-orange-500 p-3 rounded-md text-white ">SEE RESTAURANTS NEAR YOU</button>
+                            </Link>
+                        </div>
                     </div>
                 </div>)
                 :

@@ -22,9 +22,9 @@ const Header = () => {
     const { toggleTheme, Theme, darkState } = useContext(DarkContext);
     // console.log(toggleTheme, darkState, Theme)
     return (
-        <nav className="flex justify-between h-[100px] shadow-lg" style={
+        <nav className="flex justify-center h-[100px] drop-shadow-md " style={
             {
-                backgroundColor: Theme === 'white' ? '#f97316' : '#1d2125',
+                backgroundColor: Theme === 'white' ? 'white' : '#1d2125',
                 color: Theme === 'white' ? 'black' : 'white'
             }}>
             <div className="my-2 ml-[100px] ">
@@ -32,14 +32,14 @@ const Header = () => {
             </div>
 
             <div className="flex justify-between items-center">
-                <ul className="flex p-5 mt-5 ">
+                <ul className="flex justify-between items-center p-5 mt-5 ">
                     <li className="mx-5 text-lg">
-                        <button className={`px-3 py-2 mx-2 rounded-md ${Theme === 'white' ? 'bg-white' : 'bg-black'} ${Theme === 'white' ? 'text-black' : 'text-white'} `}
+                        <button className={`px-3 py-2 mx-2 rounded-md ${Theme === 'white' ? 'bg-black' : 'bg-white'}
+                         ${Theme === 'white' ? 'text-white' : 'text-black'} `}
                             onClick={toggleTheme}>
                             Dark Mode : {darkState}
                         </button>
                     </li>
-                    <li className="mx-5 text-lg hover:underline">Online Status :{OnlineStatus ? "✅" : "❌"}</li>
                     <li className="mx-5 text-lg hover:underline"><Link to="/">Home</Link></li>
                     <li className="mx-5 text-lg hover:underline" ><Link to="/about">About</Link></li>
                     <li className="mx-5 text-lg hover:underline"><Link to="/cart">Cart - ({CartItems.length} items)</Link></li>

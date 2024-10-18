@@ -27397,8 +27397,8 @@ const Body = ()=>{
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                             "data-testid": "search input-box",
-                            className: "m-5 p-2 outline-orange-400 border border-soild font-Swiggy  border-black",
                             placeholder: "Search for Restaurants",
+                            className: "m-5 p-2 outline-orange-400 border border-soild font-Swiggy  border-black",
                             type: "text",
                             value: search,
                             onChange: handleOnChange
@@ -27633,7 +27633,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "LOGO_URL", ()=>LOGO_URL);
 parcelHelpers.export(exports, "CDN_URL", ()=>CDN_URL);
-const LOGO_URL = "https://marketplace.canva.com/EAFpeiTrl4c/1/0/1600w/canva-abstract-chef-cooking-restaurant-free-logo-9Gfim1S8fHg.jpg";
+const LOGO_URL = "https://bizmanch.com/wp-content/uploads/2024/03/Swiggy-Logo.png";
 const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/";
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
@@ -35413,7 +35413,7 @@ const DarkContextProvider = ({ children })=>{
     const [Theme, setTheme] = (0, _react.useState)("white");
     const [darkState, setdarkSTATE] = (0, _react.useState)("Off");
     const toggleTheme = ()=>{
-        setTheme((Theme)=>Theme === "white" ? "#1d2a35" : "white");
+        setTheme((Theme)=>Theme === "white" ? "gray" : "white");
         setdarkSTATE((State)=>State === "Off" ? "On" : "Off");
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(DarkContext.Provider, {
@@ -35470,9 +35470,9 @@ const Header = ()=>{
     const { toggleTheme, Theme, darkState } = (0, _react.useContext)((0, _darkContextProvider.DarkContext));
     // console.log(toggleTheme, darkState, Theme)
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("nav", {
-        className: "flex justify-between h-[100px] shadow-lg",
+        className: "flex justify-center h-[100px] drop-shadow-md ",
         style: {
-            backgroundColor: Theme === "white" ? "#f97316" : "#1d2125",
+            backgroundColor: Theme === "white" ? "white" : "#1d2125",
             color: Theme === "white" ? "black" : "white"
         },
         children: [
@@ -35502,12 +35502,13 @@ const Header = ()=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "flex justify-between items-center",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                    className: "flex p-5 mt-5 ",
+                    className: "flex justify-between items-center p-5 mt-5 ",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             className: "mx-5 text-lg",
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                className: `px-3 py-2 mx-2 rounded-md ${Theme === "white" ? "bg-white" : "bg-black"} ${Theme === "white" ? "text-black" : "text-white"} `,
+                                className: `px-3 py-2 mx-2 rounded-md ${Theme === "white" ? "bg-black" : "bg-white"}
+                         ${Theme === "white" ? "text-white" : "text-black"} `,
                                 onClick: toggleTheme,
                                 children: [
                                     "Dark Mode : ",
@@ -35521,17 +35522,6 @@ const Header = ()=>{
                         }, void 0, false, {
                             fileName: "src/components/Header.js",
                             lineNumber: 36,
-                            columnNumber: 21
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                            className: "mx-5 text-lg hover:underline",
-                            children: [
-                                "Online Status :",
-                                OnlineStatus ? "\u2705" : "\u274C"
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/Header.js",
-                            lineNumber: 42,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
@@ -41336,6 +41326,7 @@ var _itemList = require("./ItemList");
 var _itemListDefault = parcelHelpers.interopDefault(_itemList);
 var _constants = require("../utils/constants");
 var _react = require("react");
+var _darkContextProvider = require("../utils/DarkContextProvider");
 var _s = $RefreshSig$();
 const Cart = ()=>{
     _s();
@@ -41359,61 +41350,73 @@ const Cart = ()=>{
             container?.removeEventListener("scroll", handleScroll);
         };
     }, []);
+    const { Theme } = (0, _react.useContext)((0, _darkContextProvider.DarkContext));
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: CartItems.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "font-bold mt-14 flex flex-col justify-center items-center",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                    className: "w-[271px] h-[256px]",
-                    src: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0",
-                    alt: ""
-                }, void 0, false, {
-                    fileName: "src/components/Cart.js",
-                    lineNumber: 47,
-                    columnNumber: 21
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                    className: "mt-5",
-                    children: "Your Cart is Empty"
-                }, void 0, false, {
-                    fileName: "src/components/Cart.js",
-                    lineNumber: 48,
-                    columnNumber: 21
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                    className: "font-normal text-gray-400",
-                    children: "You can go to home page to view more restaurants"
-                }, void 0, false, {
-                    fileName: "src/components/Cart.js",
-                    lineNumber: 49,
-                    columnNumber: 21
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "mt-5",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        to: "/",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                            className: "bg-orange-500 p-3 rounded-md text-white ",
-                            children: "SEE RESTAURANTS NEAR YOU"
+            className: "min-h-screen",
+            style: {
+                backgroundColor: Theme === "white" ? "white" : "gray",
+                color: Theme === "white" ? "gray" : "black"
+            },
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "font-bold flex flex-col justify-center items-center",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                        className: "mt-14 w-[271px] h-[256px]",
+                        src: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0",
+                        alt: ""
+                    }, void 0, false, {
+                        fileName: "src/components/Cart.js",
+                        lineNumber: 55,
+                        columnNumber: 25
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        className: "mt-5",
+                        children: "Your Cart is Empty"
+                    }, void 0, false, {
+                        fileName: "src/components/Cart.js",
+                        lineNumber: 56,
+                        columnNumber: 25
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        className: "font-normal text-gray-400",
+                        children: "You can go to home page to view more restaurants"
+                    }, void 0, false, {
+                        fileName: "src/components/Cart.js",
+                        lineNumber: 57,
+                        columnNumber: 25
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "mt-5",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: "/",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                className: "bg-orange-500 p-3 rounded-md text-white ",
+                                children: "SEE RESTAURANTS NEAR YOU"
+                            }, void 0, false, {
+                                fileName: "src/components/Cart.js",
+                                lineNumber: 60,
+                                columnNumber: 33
+                            }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/Cart.js",
-                            lineNumber: 52,
+                            lineNumber: 59,
                             columnNumber: 29
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/Cart.js",
-                        lineNumber: 51,
+                        lineNumber: 58,
                         columnNumber: 25
                     }, undefined)
-                }, void 0, false, {
-                    fileName: "src/components/Cart.js",
-                    lineNumber: 50,
-                    columnNumber: 21
-                }, undefined)
-            ]
-        }, void 0, true, {
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Cart.js",
+                lineNumber: 54,
+                columnNumber: 21
+            }, undefined)
+        }, void 0, false, {
             fileName: "src/components/Cart.js",
-            lineNumber: 46,
+            lineNumber: 49,
             columnNumber: 18
         }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: "flex justify-center items-center min-h-screen bg-gray-200",
@@ -41432,12 +41435,12 @@ const Cart = ()=>{
                                 alt: ""
                             }, void 0, false, {
                                 fileName: "src/components/Cart.js",
-                                lineNumber: 65,
+                                lineNumber: 74,
                                 columnNumber: 33
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/Cart.js",
-                            lineNumber: 62,
+                            lineNumber: 71,
                             columnNumber: 29
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -41449,7 +41452,7 @@ const Cart = ()=>{
                                     itemsCards: CartItems
                                 }, void 0, false, {
                                     fileName: "src/components/Cart.js",
-                                    lineNumber: 70,
+                                    lineNumber: 79,
                                     columnNumber: 33
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -41460,7 +41463,7 @@ const Cart = ()=>{
                                             children: "Bill Details"
                                         }, void 0, false, {
                                             fileName: "src/components/Cart.js",
-                                            lineNumber: 72,
+                                            lineNumber: 81,
                                             columnNumber: 37
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -41470,69 +41473,13 @@ const Cart = ()=>{
                                                     children: "Item total"
                                                 }, void 0, false, {
                                                     fileName: "src/components/Cart.js",
-                                                    lineNumber: 74,
-                                                    columnNumber: 41
-                                                }, undefined),
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                                    children: [
-                                                        "\u20B9",
-                                                        itemTotal
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "src/components/Cart.js",
-                                                    lineNumber: 75,
-                                                    columnNumber: 41
-                                                }, undefined)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "src/components/Cart.js",
-                                            lineNumber: 73,
-                                            columnNumber: 37
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            className: "flex justify-between text-sm mt-5 text-gray-400",
-                                            children: [
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                                    children: "Dilevery Charges"
-                                                }, void 0, false, {
-                                                    fileName: "src/components/Cart.js",
-                                                    lineNumber: 78,
-                                                    columnNumber: 41
-                                                }, undefined),
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                                    children: "\u20B915"
-                                                }, void 0, false, {
-                                                    fileName: "src/components/Cart.js",
-                                                    lineNumber: 79,
-                                                    columnNumber: 41
-                                                }, undefined)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "src/components/Cart.js",
-                                            lineNumber: 77,
-                                            columnNumber: 37
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            className: "border-b-black border-2 border-solid mt-5"
-                                        }, void 0, false, {
-                                            fileName: "src/components/Cart.js",
-                                            lineNumber: 81,
-                                            columnNumber: 37
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            className: "flex justify-between font-bold mt-5  ",
-                                            children: [
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                                    children: "TO PAY"
-                                                }, void 0, false, {
-                                                    fileName: "src/components/Cart.js",
                                                     lineNumber: 83,
                                                     columnNumber: 41
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                                     children: [
                                                         "\u20B9",
-                                                        TotalPay
+                                                        itemTotal
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "src/components/Cart.js",
@@ -41544,38 +41491,94 @@ const Cart = ()=>{
                                             fileName: "src/components/Cart.js",
                                             lineNumber: 82,
                                             columnNumber: 37
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            className: "flex justify-between text-sm mt-5 text-gray-400",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                    children: "Dilevery Charges"
+                                                }, void 0, false, {
+                                                    fileName: "src/components/Cart.js",
+                                                    lineNumber: 87,
+                                                    columnNumber: 41
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                    children: "\u20B915"
+                                                }, void 0, false, {
+                                                    fileName: "src/components/Cart.js",
+                                                    lineNumber: 88,
+                                                    columnNumber: 41
+                                                }, undefined)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "src/components/Cart.js",
+                                            lineNumber: 86,
+                                            columnNumber: 37
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            className: "border-b-black border-2 border-solid mt-5"
+                                        }, void 0, false, {
+                                            fileName: "src/components/Cart.js",
+                                            lineNumber: 90,
+                                            columnNumber: 37
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            className: "flex justify-between font-bold mt-5  ",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                    children: "TO PAY"
+                                                }, void 0, false, {
+                                                    fileName: "src/components/Cart.js",
+                                                    lineNumber: 92,
+                                                    columnNumber: 41
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                    children: [
+                                                        "\u20B9",
+                                                        TotalPay
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "src/components/Cart.js",
+                                                    lineNumber: 93,
+                                                    columnNumber: 41
+                                                }, undefined)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "src/components/Cart.js",
+                                            lineNumber: 91,
+                                            columnNumber: 37
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/Cart.js",
-                                    lineNumber: 71,
+                                    lineNumber: 80,
                                     columnNumber: 33
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/Cart.js",
-                            lineNumber: 68,
+                            lineNumber: 77,
                             columnNumber: 29
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/Cart.js",
-                    lineNumber: 61,
+                    lineNumber: 70,
                     columnNumber: 25
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Cart.js",
-                lineNumber: 59,
+                lineNumber: 68,
                 columnNumber: 21
             }, undefined)
         }, void 0, false, {
             fileName: "src/components/Cart.js",
-            lineNumber: 58,
+            lineNumber: 67,
             columnNumber: 18
         }, undefined)
     }, void 0, false);
 };
-_s(Cart, "VQvJGnUZ54/WuhJMGqlRnIRUj7c=", false, function() {
+_s(Cart, "3V4tAKfp/KljND5m3tTGeGk/75g=", false, function() {
     return [
         (0, _reactRedux.useSelector)
     ];
@@ -41590,7 +41593,7 @@ $RefreshReg$(_c, "Cart");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-redux":"62sf7","react-router-dom":"9xmpe","./ItemList":"kZjho","../utils/constants":"hB8jg","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kxbq9":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-redux":"62sf7","react-router-dom":"9xmpe","./ItemList":"kZjho","../utils/constants":"hB8jg","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../utils/DarkContextProvider":"9W1uk"}],"kxbq9":[function(require,module,exports) {
 module.exports = require("535a57bc6058ab64")(require("ce65c7bc875b282e").getBundleURL("lPpKD") + "About.84db8bad.js" + "?" + Date.now()).catch((err)=>{
     delete module.bundle.cache[module.id];
     throw err;
