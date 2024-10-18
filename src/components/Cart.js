@@ -71,7 +71,7 @@ const Cart = () => {
                             <div
                                 ref={containerRef} className={`flex justify-center py-5 mb-5 transition-shadow
                                   ${isScrolled ? "shadow-[0px_4px_5px_-2px_rgba(0,0,0,0.1)]" : " "}`}>
-                                <img className="ml-5 w-20 h-20" src={LOGO_URL} alt="" />
+                                <img className=" w-50 h-20" src={LOGO_URL} alt="" />
                             </div>
 
                             <div ref={containerRef} className={`h-[500px] overflow-y-auto   
@@ -91,6 +91,9 @@ const Cart = () => {
                                     <div className="flex justify-between font-bold mt-5  ">
                                         <span>TO PAY</span>
                                         <span>₹{TotalPay}</span>
+                                    </div>
+                                    <div className="flex justify-center">
+                                    <button className="p-3 font-Swiggy hover:bg-white border-orange-400 border-solid border-2 bg-orange-400 rounded-lg">Procced to pay</button>
                                     </div>
                                 </div>
                             </div>

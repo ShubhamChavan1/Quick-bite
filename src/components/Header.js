@@ -8,13 +8,10 @@ import { useSelector } from "react-redux";
 
 
 const Header = () => {
-    const [state, setSTATE] = useState("Sign In")
+
     const OnlineStatus = useOnlineStatus();
 
 
-    const handleOnClick = () => {
-        state === "Sign In" ? setSTATE("Sign Out") : setSTATE("Sign In")
-    }
 
     //subscribing to the state of cart items
     const CartItems = useSelector((store) => store.cart.items)
@@ -43,9 +40,7 @@ const Header = () => {
                     <li className="mx-5 text-lg hover:underline"><Link to="/">Home</Link></li>
                     <li className="mx-5 text-lg hover:underline" ><Link to="/about">About</Link></li>
                     <li className="mx-5 text-lg hover:underline"><Link to="/cart">Cart - ({CartItems.length} items)</Link></li>
-                    <div className="mb-3">
-                        <button className="mx-5 rounded-md bg-gray-500 text-lg px-3 py-2" onClick={handleOnClick}>{state}</button>
-                    </div>
+
 
                 </ul>
             </div>
